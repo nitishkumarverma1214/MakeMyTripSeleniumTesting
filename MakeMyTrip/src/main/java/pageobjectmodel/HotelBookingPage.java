@@ -1,11 +1,15 @@
 package pageobjectmodel;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.Baseclass;
 import utilities.ReusableMethods;
@@ -21,14 +25,16 @@ public class HotelBookingPage extends Baseclass {
 	static By guest = By.cssSelector("#guest");
 	static By adultGuest = By.xpath("//ul[@data-cy='adultCount']/child::*");
 
-	public static void fillCity() throws InterruptedException {
+	public static void fillCity()  {
 		// fill the city value
 		driver.findElement(city).click();
-		driver.findElement(hotelInput).sendKeys("Chennai");
+		driver.findElement(hotelInput).sendKeys("Delhi");
 		
-		// replace the dead wait
-		Thread.sleep(2000);
+		// wait for the input
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.textToBePresentInElementValue(hotelInput, "Delhi"));
 		driver.findElement(hotelInput).sendKeys(Keys.DOWN, Keys.RETURN);
+		ReusableMethods.captureScreenShot(driver);
 
 	}
 
@@ -42,11 +48,15 @@ public class HotelBookingPage extends Baseclass {
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
 
-	public static void showGuestCount() throws InterruptedException {
+	public static void showGuestCount()  {
 		driver.findElement(guest).click();
+		List<String> adultGuetsList = new ArrayList<String>();
+		// wait for the list to become visible
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(adultGuest));
 		
-		// replace the dead wait
-		Thread.sleep(1000);
-		driver.findElements(adultGuest).forEach(element -> System.out.println(element.getAttribute("data-cy")));
+		driver.findElements(adultGuest).forEach(element -> adultGuetsList.add(element.getAttribute("data-cy")));
+		ReusableMethods.captureScreenShot(driver);
+		System.out.println(adultGuetsList);
 	}
 }

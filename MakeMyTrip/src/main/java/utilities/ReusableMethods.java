@@ -20,7 +20,7 @@ import org.openqa.selenium.WebDriver;
 public class ReusableMethods {
 
 	/************ Method to take Screenshot *****************/
-	public void captureScreenShot(WebDriver driver)
+	public static void  captureScreenShot(WebDriver driver)
 	{
 		System.out.println("Taking the screenshot");
 		try {

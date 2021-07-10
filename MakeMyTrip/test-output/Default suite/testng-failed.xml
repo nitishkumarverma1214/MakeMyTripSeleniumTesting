@@ -7,6 +7,7 @@
         <methods>
           <include name="bookHotel"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testcases.Test -->
     </classes>

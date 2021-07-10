@@ -1,10 +1,9 @@
 package pageobjectmodel;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import utilities.Baseclass;
 
@@ -14,37 +13,41 @@ public class LandingPage extends Baseclass {
 		super(driver, element);
 	}
 
-	@FindBy(xpath = "//li[@class='menu_Hotels']")
-	public WebElement hotelLink;
+	static By hotelLink = By.xpath("//li[@class='menu_Hotels']");
 
-	@FindBy(xpath = "//li[@class='menu_Cabs']")
-	public WebElement cabLink;
+	static By cabLink = By.xpath("//li[@class='menu_Cabs']");
 
-	@FindBy(xpath = "//li[contains(@class,'menu_More')]")
-	public WebElement moreMenu;
-	
-	@FindBy(partialLinkText = "Giftcards")
-	public WebElement giftCardLink;
-	
-	public HotelBookingPage clickHotelLink() {
-		hotelLink.click();
-		return PageFactory.initElements(driver, HotelBookingPage.class);
+	static By loginModal = By.className("loginModal");
+
+	 static By moreMenu = By.xpath("//li[contains(@class,'menu_More')]");
+
+	 static By giftCardLink = By.partialLinkText("Giftcards");
+
+	public static void closeLoginWindow() {
+		if (!driver.findElements(loginModal).isEmpty())
+			driver.findElement(loginModal).click();
 	}
 
-	public CabBookingPage clickCabLink() {
-		cabLink.click();
-		return PageFactory.initElements(driver, CabBookingPage.class);
+	public static void clickHotelLink() {
+		closeLoginWindow();
+		driver.findElement(hotelLink).click();
 	}
-	
-	public GiftCardsPage clickGiftCardsLink() {
+
+	public static void clickCabLink() {
+		closeLoginWindow();
+		driver.findElement(cabLink).click();
+	}
+
+	public static void clickGiftCardsLink() {
+		closeLoginWindow();
 		// Hover over More Menu
 		Actions action = new Actions(driver);
-		action.moveToElement(moreMenu).perform();
-		
+		WebElement element = driver.findElement(moreMenu);
+		action.moveToElement(element).perform();
+
 		// click GiftCard link
-		giftCardLink.click();
-		
-		return PageFactory.initElements(driver, GiftCardsPage.class);
+		driver.findElement(giftCardLink).click();
+
 	}
-	
+
 }

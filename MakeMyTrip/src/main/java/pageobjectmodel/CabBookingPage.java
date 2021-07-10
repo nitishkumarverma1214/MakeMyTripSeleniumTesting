@@ -10,5 +10,5 @@ public class CabBookingPage extends Baseclass {
 	public CabBookingPage(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
-
+	
 }

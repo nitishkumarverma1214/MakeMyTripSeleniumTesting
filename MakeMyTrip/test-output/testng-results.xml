@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-07-10T12:00:12 IST" name="Default suite" finished-at="2021-07-10T12:00:53 IST" duration-ms="40722">
+    <groups>
+    </groups>
+    <test started-at="2021-07-10T12:00:12 IST" name="Default test" finished-at="2021-07-10T12:00:53 IST" duration-ms="40722">
+      <class name="testcases.Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-10T12:00:12 IST" name="setUp" finished-at="2021-07-10T12:00:21 IST" duration-ms="8621" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="bookHotel()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-10T12:00:21 IST" name="bookHotel" finished-at="2021-07-10T12:00:27 IST" duration-ms="5935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookHotel -->
+        <test-method signature="bookOutStationCab()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-10T12:00:27 IST" name="bookOutStationCab" finished-at="2021-07-10T12:00:37 IST" duration-ms="10625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookOutStationCab -->
+        <test-method signature="buyGiftCard()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-10T12:00:37 IST" name="buyGiftCard" finished-at="2021-07-10T12:00:53 IST" duration-ms="15289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buyGiftCard -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-10T12:00:53 IST" name="tearDown" finished-at="2021-07-10T12:00:53 IST" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcases.Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

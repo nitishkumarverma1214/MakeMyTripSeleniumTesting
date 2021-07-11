@@ -35,7 +35,7 @@ public class GiftCardsPage extends Baseclass {
 		Thread.sleep(3000);
 		driver.findElement(weddingGiftCard).click();
 		System.out.println("card clicked");
-	}
+	} 
 	
 	public static void selectEmail() throws InterruptedException {
 		//WebDriverWait wait = new WebDriverWait(driver,10);

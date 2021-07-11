@@ -33,7 +33,7 @@ public class Test {
 	}
 	
 	@org.testng.annotations.Test
-	public void buyGiftCard() {
+	public void buyGiftCard() throws InterruptedException {
 		GiftCards.execution();
 	}
 //	

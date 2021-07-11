@@ -5,9 +5,9 @@
     <classes>
       <class name="testcases.Test">
         <methods>
-          <include name="bookHotel"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="buyGiftCard"/>
         </methods>
       </class> <!-- testcases.Test -->
     </classes>

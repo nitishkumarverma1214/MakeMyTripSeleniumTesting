@@ -69,6 +69,6 @@ public class DriverSetup extends Baseclass {
 
 	// method for closing the browser tab
 	public static void Kill() {
-		driver.close();
+		driver.quit();
 	}
 }

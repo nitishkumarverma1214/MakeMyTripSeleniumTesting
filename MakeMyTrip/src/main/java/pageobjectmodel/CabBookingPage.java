@@ -50,7 +50,7 @@ public class CabBookingPage extends Baseclass {
 	}
 	public static void fillDepartureDate(){
 		try {
-			ReusableMethods.selectDate(driver, "01/10/2021");
+			ReusableMethods.selectDate(driver, "01/08/2021");
 			ReusableMethods.captureScreenShot(driver);
 		} catch (ParseException e) {
 			e.printStackTrace();

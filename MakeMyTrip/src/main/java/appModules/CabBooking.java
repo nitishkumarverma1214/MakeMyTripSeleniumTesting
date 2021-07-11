@@ -4,11 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import pageobjectmodel.CabBookingPage;
-import pageobjectmodel.HotelBookingPage;
 import pageobjectmodel.LandingPage;
 import utilities.Baseclass;
-
-import java.text.ParseException;
 
 public class CabBooking extends Baseclass {
 

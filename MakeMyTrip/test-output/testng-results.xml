@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-11T21:32:29 IST" name="Default suite" finished-at="2021-07-11T21:34:12 IST" duration-ms="102849">
+  <suite started-at="2021-07-11T21:56:29 IST" name="Default suite" finished-at="2021-07-11T21:58:08 IST" duration-ms="99740">
     <groups>
     </groups>
-    <test started-at="2021-07-11T21:32:29 IST" name="Default test" finished-at="2021-07-11T21:34:12 IST" duration-ms="102849">
+    <test started-at="2021-07-11T21:56:29 IST" name="Default test" finished-at="2021-07-11T21:58:08 IST" duration-ms="99740">
       <class name="testcases.Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:32:29 IST" name="setUp" finished-at="2021-07-11T21:32:45 IST" duration-ms="15248" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:56:29 IST" name="setUp" finished-at="2021-07-11T21:56:45 IST" duration-ms="16630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="bookHotel()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:32:45 IST" name="bookHotel" finished-at="2021-07-11T21:33:04 IST" duration-ms="18997" status="PASS">
+        <test-method signature="bookHotel()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:56:45 IST" name="bookHotel" finished-at="2021-07-11T21:56:56 IST" duration-ms="10851" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bookHotel -->
-        <test-method signature="bookOutStationCab()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:33:04 IST" name="bookOutStationCab" finished-at="2021-07-11T21:33:43 IST" duration-ms="39759" status="PASS">
+        <test-method signature="bookOutStationCab()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:56:56 IST" name="bookOutStationCab" finished-at="2021-07-11T21:57:39 IST" duration-ms="42595" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bookOutStationCab -->
-        <test-method signature="buyGiftCard()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:33:43 IST" name="buyGiftCard" finished-at="2021-07-11T21:34:10 IST" duration-ms="26629" status="PASS">
+        <test-method signature="buyGiftCard()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:57:39 IST" name="buyGiftCard" finished-at="2021-07-11T21:58:06 IST" duration-ms="27331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyGiftCard -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:34:10 IST" name="tearDown" finished-at="2021-07-11T21:34:12 IST" duration-ms="2157" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.Test@609db43b]" started-at="2021-07-11T21:58:06 IST" name="tearDown" finished-at="2021-07-11T21:58:08 IST" duration-ms="2271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

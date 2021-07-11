@@ -40,7 +40,7 @@ public class GiftCardsPage extends Baseclass {
 	public static void selectEmail() throws InterruptedException {
 		//WebDriverWait wait = new WebDriverWait(driver,10);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(email).click();
 	}
 

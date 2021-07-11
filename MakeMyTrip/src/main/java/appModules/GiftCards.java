@@ -14,7 +14,7 @@ public class GiftCards extends Baseclass {
 		super(driver, element);
 	}
 
-	public static void execution() throws InterruptedException {
+	public static void execution() throws InterruptedException {  
 		LandingPage.clickGiftCardsLink();
 
 		String parentWindow = driver.getWindowHandle();

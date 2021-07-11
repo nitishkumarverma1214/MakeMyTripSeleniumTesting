@@ -20,7 +20,7 @@ public class GiftCardsPage extends Baseclass {
 	static By recipientName = By.name("name");
 	static By senderName = By.name("senderName");
 	static By recipientNumber = By.name("mobileNo");
-	static By senderNumber = By.name("senderMobileNo");
+	static By senderNumber = By.name("senderMobileNo"); 
 	static By recipientEmail = By.name("emailId");
 	static By senderEmail = By.name("senderEmailId");
 	static By giftMessage = By.name("giftMessage");

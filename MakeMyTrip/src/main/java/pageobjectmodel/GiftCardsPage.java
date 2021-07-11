@@ -1,7 +1,6 @@
 package pageobjectmodel;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +15,7 @@ public class GiftCardsPage extends Baseclass {
 		super(driver, element);
 	}
 
-	static By weddingGiftCard = By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/div[2]/ul/li[2]/div/img");
+	static By weddingGiftCard = By.xpath("//p[contains(text(),'Wedding Gift Card')]");
 	static By email = By.xpath("//li[contains(text(),'E-Mail')]");
 	static By recipientName = By.name("name");
 	static By senderName = By.name("senderName");
@@ -28,23 +27,25 @@ public class GiftCardsPage extends Baseclass {
 	static By buynowButtton = By.xpath("//button[contains(text(),'BUY NOW')]");
 	static By errorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[3]/p");
 	
-	public static void selectWeddingGiftCard() {
+	public static void selectWeddingGiftCard() throws InterruptedException {
 		
-		((JavascriptExecutor)driver).executeScript("scroll(0,500)");
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
+		
+		//WebDriverWait wait = new WebDriverWait(driver,10);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
+		Thread.sleep(3000);
 		driver.findElement(weddingGiftCard).click();
 		System.out.println("card clicked");
 	}
 	
-	public static void selectEmail() {
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(email));
+	public static void selectEmail() throws InterruptedException {
+		//WebDriverWait wait = new WebDriverWait(driver,10);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(email));
+		Thread.sleep(2000);
 		driver.findElement(email).click();
 	}
 
 	public static void enterSenderDetails(String name,String phone,String email) {
-		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
+		
 		driver.findElement(senderName).sendKeys(name);
 		driver.findElement(senderNumber).sendKeys(phone);
 		driver.findElement(senderEmail).sendKeys(email);

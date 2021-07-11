@@ -6,7 +6,6 @@ import java.util.Properties;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import appModules.CabBooking;
 import appModules.GiftCards;
 import appModules.HotelBooking;
@@ -31,7 +30,7 @@ public class Test {
 	public void bookOutStationCab() {
 		CabBooking.execution();
 	}
-	
+//	
 	@org.testng.annotations.Test
 	public void buyGiftCard() throws InterruptedException {
 		GiftCards.execution();

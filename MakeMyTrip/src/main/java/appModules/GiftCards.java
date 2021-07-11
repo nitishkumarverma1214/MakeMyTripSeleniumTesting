@@ -1,5 +1,7 @@
 package appModules;
 
+import java.util.Set;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -12,8 +14,19 @@ public class GiftCards extends Baseclass {
 	public GiftCards(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
+
 	public static void execution() throws InterruptedException {
 		LandingPage.clickGiftCardsLink();
+
+		String parentWindow = driver.getWindowHandle();
+
+		for (String window : driver.getWindowHandles()) {
+			if (!window.equalsIgnoreCase(parentWindow)) {
+				driver.switchTo().window(window);
+				break;
+			}
+		}
+
 		GiftCardsPage.selectWeddingGiftCard();
 		GiftCardsPage.selectEmail();
 		GiftCardsPage.enterSenderDetails("PM", "9871923832", "pmo@gmail.com");

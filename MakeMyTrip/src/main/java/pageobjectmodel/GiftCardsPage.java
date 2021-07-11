@@ -1,7 +1,5 @@
 package pageobjectmodel;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +16,7 @@ public class GiftCardsPage extends Baseclass {
 		super(driver, element);
 	}
 
-	static By weddingGiftCard = By.xpath("//p[contains(text(),'Wedding Gift Card')]");
+	static By weddingGiftCard = By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/div[2]/ul/li[2]/div/img");
 	static By email = By.xpath("//li[contains(text(),'E-Mail')]");
 	static By recipientName = By.name("name");
 	static By senderName = By.name("senderName");
@@ -31,15 +29,15 @@ public class GiftCardsPage extends Baseclass {
 	static By errorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[3]/p");
 	
 	public static void selectWeddingGiftCard() {
-		// To scroll down 
-		((JavascriptExecutor)driver).executeScript("scroll(0,450)");
+		
+		((JavascriptExecutor)driver).executeScript("scroll(0,500)");
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
 		driver.findElement(weddingGiftCard).click();
+		System.out.println("card clicked");
 	}
 	
 	public static void selectEmail() {
-		
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(email));
 		driver.findElement(email).click();

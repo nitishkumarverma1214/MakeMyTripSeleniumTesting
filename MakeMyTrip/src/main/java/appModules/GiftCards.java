@@ -26,12 +26,9 @@ public class GiftCards extends Baseclass {
 			}
 		}
 		
-		
-		 Thread.sleep(2000);
 		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
 		GiftCardsPage.selectWeddingGiftCard();
 		GiftCardsPage.selectEmail();
-		Thread.sleep(2000);
 		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
 		GiftCardsPage.enterSenderDetails("PM", "9871923832", "pmo@gmail.com");
 		GiftCardsPage.enterRecipientDetails("Me", "9014834542", "hi.com");

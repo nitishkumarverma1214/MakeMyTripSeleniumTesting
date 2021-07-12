@@ -33,7 +33,6 @@ public class GiftCardsPage extends Baseclass {
 		
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
-		Thread.sleep(3000);
 		driver.findElement(weddingGiftCard).click();
 		System.out.println("card clicked");
 	} 

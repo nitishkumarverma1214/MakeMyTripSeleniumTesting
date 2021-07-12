@@ -1,6 +1,7 @@
 package pageobjectmodel;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,17 +31,16 @@ public class GiftCardsPage extends Baseclass {
 	public static void selectWeddingGiftCard() throws InterruptedException {
 		
 		
-		//WebDriverWait wait = new WebDriverWait(driver,10);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
 		Thread.sleep(3000);
 		driver.findElement(weddingGiftCard).click();
 		System.out.println("card clicked");
 	} 
 	
 	public static void selectEmail() throws InterruptedException {
-		//WebDriverWait wait = new WebDriverWait(driver,10);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(email));
 		driver.findElement(email).click();
 	}
 

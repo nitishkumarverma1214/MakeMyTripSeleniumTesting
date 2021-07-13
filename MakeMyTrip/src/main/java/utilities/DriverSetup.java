@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +15,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverSetup extends Baseclass {
 	static FileInputStream fis;
@@ -25,35 +28,14 @@ public class DriverSetup extends Baseclass {
 	}
 
 	public static void Initiate(String browserName) throws IOException {
-		switch (browserName) {
-		// chrome driver code
-		case "chrome":
-			System.setProperty("webdriver.chrome.driver", "webdrivers//chromedriver.exe");
-			ChromeOptions chromeOptions = new ChromeOptions();
-			// opening the browser in incognito mode.
-			chromeOptions.addArguments("--disable-notifications", "--incognito");
-			driver = new ChromeDriver(chromeOptions);
-			openBrowser();
-			break;
+		DesiredCapabilities capabilities;
+		URL gridUrl;
 
-		case "edge":
-			// MS Edge driver code
-			System.setProperty("webdriver.edge.driver", "webdrivers//msedgedriver.exe");
-			driver = new EdgeDriver();
-			openBrowser();
-			break;
-		case "firefox":
-			// firefox
-			System.setProperty("webdriver.gecko.driver", "webdrivers//geckodriver.exe");
-			FirefoxOptions options = new FirefoxOptions();
-			// open browser in headless mode
-			options.addArguments("--headless");
-			options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-			driver = new FirefoxDriver(options);
-			openBrowser();
-			break;
-
-		}
+		gridUrl = new URL(" http://192.168.43.87:4445/wd/hub");
+		capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(browserName);
+		driver = new RemoteWebDriver(gridUrl, capabilities);
+		openBrowser();
 
 	}
 

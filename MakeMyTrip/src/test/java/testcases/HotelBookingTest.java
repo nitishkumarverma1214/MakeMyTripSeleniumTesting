@@ -13,7 +13,7 @@ import appModules.GiftCards;
 import appModules.HotelBooking;
 import utilities.DriverSetup;
 
-public class MakeMyTripTest {
+public class HotelBookingTest {
 	static String configFile = "src//test//resources//config.properties";
 
 	@BeforeTest
@@ -27,15 +27,6 @@ public class MakeMyTripTest {
 		}
 	}
 
-	@Test
-	public void bookOutStationCab() {
-		CabBooking.execution();
-	}
-
-	@Test
-	public void buyGiftCard() throws InterruptedException {
-		GiftCards.execution();
-	}
 
 	@Test
 	public void bookHotel() {

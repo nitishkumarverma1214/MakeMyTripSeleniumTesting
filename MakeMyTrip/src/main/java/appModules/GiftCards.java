@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import pageobjectmodel.GiftCardsDetailsPage;
 import pageobjectmodel.GiftCardsPage;
 import pageobjectmodel.LandingPage;
 import utilities.Baseclass;
@@ -14,8 +15,8 @@ public class GiftCards extends Baseclass {
 		super(driver, element);
 	}
 
-	public static void execution() throws InterruptedException {  
-		LandingPage.clickGiftCardsLink(); 
+	public static void execution() throws InterruptedException {
+		LandingPage.clickGiftCardsLink();
 
 		String parentWindow = driver.getWindowHandle();
 
@@ -25,16 +26,17 @@ public class GiftCards extends Baseclass {
 				break;
 			}
 		}
-		
-		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+
+		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 		GiftCardsPage.selectWeddingGiftCard();
-		GiftCardsPage.selectEmail();
-		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
-		GiftCardsPage.enterSenderDetails("PM", "9871923832", "pmo@gmail.com");
-		GiftCardsPage.enterRecipientDetails("Me", "9014834542", "hi.com");
-		GiftCardsPage.addMessage("mithai lelo");
-		GiftCardsPage.clickBuyNow();
-		GiftCardsPage.printErrorMessage();
-		
+
+		GiftCardsDetailsPage.selectEmail();
+		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
+		GiftCardsDetailsPage.enterSenderDetails("PM", "9871923832", "pmo@gmail.com");
+		GiftCardsDetailsPage.enterRecipientDetails("Me", "9014834542", "hi.com");
+		GiftCardsDetailsPage.addMessage("mithai lelo");
+		GiftCardsDetailsPage.clickBuyNow();
+		GiftCardsDetailsPage.printErrorMessage();
+
 	}
 }

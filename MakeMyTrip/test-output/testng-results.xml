@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-12T11:03:30 IST" name="Default suite" finished-at="2021-07-12T11:05:00 IST" duration-ms="90443">
+  <suite started-at="2021-07-13T12:23:53 IST" name="Default suite" finished-at="2021-07-13T12:25:20 IST" duration-ms="87458">
     <groups>
     </groups>
-    <test started-at="2021-07-12T11:03:30 IST" name="Default test" finished-at="2021-07-12T11:05:00 IST" duration-ms="90443">
-      <class name="testcases.Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test@87a85e1]" started-at="2021-07-12T11:03:30 IST" name="setUp" finished-at="2021-07-12T11:03:39 IST" duration-ms="9485" status="PASS">
+    <test started-at="2021-07-13T12:23:53 IST" name="Default test" finished-at="2021-07-13T12:25:20 IST" duration-ms="87458">
+      <class name="testcases.MakeMyTripTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.MakeMyTripTest@609db43b]" started-at="2021-07-13T12:23:53 IST" name="setUp" finished-at="2021-07-13T12:23:59 IST" duration-ms="6362" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="bookHotel()[pri:0, instance:testcases.Test@87a85e1]" started-at="2021-07-12T11:03:39 IST" name="bookHotel" finished-at="2021-07-12T11:03:49 IST" duration-ms="9702" status="PASS">
+        <test-method signature="bookHotel()[pri:0, instance:testcases.MakeMyTripTest@609db43b]" started-at="2021-07-13T12:23:59 IST" name="bookHotel" finished-at="2021-07-13T12:24:19 IST" duration-ms="19318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bookHotel -->
-        <test-method signature="bookOutStationCab()[pri:0, instance:testcases.Test@87a85e1]" started-at="2021-07-12T11:03:49 IST" name="bookOutStationCab" finished-at="2021-07-12T11:04:33 IST" duration-ms="43642" status="PASS">
+        <test-method signature="bookOutStationCab()[pri:0, instance:testcases.MakeMyTripTest@609db43b]" started-at="2021-07-13T12:24:19 IST" name="bookOutStationCab" finished-at="2021-07-13T12:24:59 IST" duration-ms="40342" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bookOutStationCab -->
-        <test-method signature="buyGiftCard()[pri:0, instance:testcases.Test@87a85e1]" started-at="2021-07-12T11:04:33 IST" name="buyGiftCard" finished-at="2021-07-12T11:04:59 IST" duration-ms="26651" status="PASS">
+        <test-method signature="buyGiftCard()[pri:0, instance:testcases.MakeMyTripTest@609db43b]" started-at="2021-07-13T12:24:59 IST" name="buyGiftCard" finished-at="2021-07-13T12:25:19 IST" duration-ms="20286" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyGiftCard -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.Test@87a85e1]" started-at="2021-07-12T11:04:59 IST" name="tearDown" finished-at="2021-07-12T11:05:00 IST" duration-ms="915" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.MakeMyTripTest@609db43b]" started-at="2021-07-13T12:25:19 IST" name="tearDown" finished-at="2021-07-13T12:25:20 IST" duration-ms="1090" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcases.Test -->
+      </class> <!-- testcases.MakeMyTripTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

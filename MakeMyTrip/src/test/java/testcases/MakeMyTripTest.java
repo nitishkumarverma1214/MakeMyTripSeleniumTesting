@@ -6,14 +6,16 @@ import java.util.Properties;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
 import appModules.CabBooking;
 import appModules.GiftCards;
 import appModules.HotelBooking;
 import utilities.DriverSetup;
 
-public class Test {
+public class MakeMyTripTest {
 	static String configFile = "src//test//resources//config.properties";
-	
+
 	@BeforeTest
 	public void setUp() {
 		try (FileInputStream fis = new FileInputStream(configFile);) {
@@ -24,22 +26,22 @@ public class Test {
 			io.printStackTrace();
 		}
 	}
-	
-	
-	@org.testng.annotations.Test
+
+	@Test
 	public void bookOutStationCab() {
 		CabBooking.execution();
 	}
-//	
-	@org.testng.annotations.Test
+
+	@Test
 	public void buyGiftCard() throws InterruptedException {
 		GiftCards.execution();
 	}
-//	
-	@org.testng.annotations.Test
+
+	@Test
 	public void bookHotel() {
 		HotelBooking.execution();
 	}
+
 	@AfterTest
 	public void tearDown() {
 		DriverSetup.Kill();

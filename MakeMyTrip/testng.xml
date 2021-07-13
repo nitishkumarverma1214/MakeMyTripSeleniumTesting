@@ -3,7 +3,7 @@
 <suite name="MakeMyTrip">
   <test thread-count="1" name="Test">
     <classes>
-      <class name="testcases.Test"/>
+      <class name="testcases.MakeMyTripTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

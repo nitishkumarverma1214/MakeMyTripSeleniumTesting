@@ -23,6 +23,20 @@ public class LandingPage extends Baseclass {
 
 	 static By giftCardLink = By.partialLinkText("Giftcards");
 
+	 public static WebElement cabLink() {
+		 return driver.findElement(cabLink);
+	 }
+	 public static WebElement hotelLink() {
+		 return driver.findElement(hotelLink);
+	 }
+	 public static WebElement moreMenu() {
+		 return driver.findElement(moreMenu);
+	 }
+	 
+	 public static WebElement giftCardText() {
+		 return driver.findElement(giftCardLink);
+	 }
+	 
 	public static void closeLoginWindow() {
 		if (!driver.findElements(loginModal).isEmpty())
 			driver.findElement(loginModal).click();

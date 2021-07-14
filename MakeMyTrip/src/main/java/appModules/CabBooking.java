@@ -1,6 +1,7 @@
 package appModules;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ import utilities.Baseclass;
 public class CabBooking extends Baseclass {
 
 	public CabBooking(WebDriver driver, WebElement element) {
-		super(driver, element);
+		super(driver,element);
 	}
 
 	public static void execution() {
@@ -42,5 +43,15 @@ public class CabBooking extends Baseclass {
 		}
 
 	}
+	
+	public static boolean cabElement() {
+		 WebElement icon = LandingPage.cabLink();
+		 boolean check = false;
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		if(icon.isDisplayed() && icon.isEnabled()) {
+				check=true;
+		}
+		return check;
+	 }
 
 }

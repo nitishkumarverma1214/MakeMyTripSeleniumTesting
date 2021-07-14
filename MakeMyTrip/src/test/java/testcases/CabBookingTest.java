@@ -7,8 +7,10 @@ import java.util.Properties;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import appModules.CabBooking;
+import appModules.GiftCards;
 import utilities.DriverSetup;
 
 public class CabBookingTest {
@@ -27,9 +29,11 @@ public class CabBookingTest {
 
 	}
 
-	@Test
-	public void bookOutStationCab() {
-		CabBooking.execution();
+	@Test(priority=1)
+	public void cabsElementTest() {
+		boolean choice =CabBooking.cabElement();
+		SoftAssert sa = new SoftAssert();
+		sa.assertTrue(choice);
 	}
 
 	@AfterTest

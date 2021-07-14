@@ -31,7 +31,7 @@ public class CabBookingTest {
 
 	@Test(priority=1)
 	public void cabsElementTest() {
-		boolean choice = CabBooking.cabElement();
+		boolean choice =CabBooking.cabElement();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}

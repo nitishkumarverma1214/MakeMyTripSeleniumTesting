@@ -14,7 +14,7 @@ import utilities.Baseclass;
 public class HotelBooking extends Baseclass {
 
 	public HotelBooking(WebDriver driver, WebElement element) {
-		super(driver, element);
+		super(driver,element);
 	}
 
 	public static void execution() {

@@ -16,7 +16,7 @@ import utilities.Baseclass;
 public class CabBooking extends Baseclass {
 
 	public CabBooking(WebDriver driver, WebElement element) {
-		super(driver, element);
+		super(driver,element);
 	}
 
 	public static void execution() {

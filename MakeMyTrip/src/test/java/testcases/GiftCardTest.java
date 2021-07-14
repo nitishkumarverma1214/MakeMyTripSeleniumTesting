@@ -45,8 +45,7 @@ public class GiftCardTest {
 	@Test
 	public void buyGiftCard() throws InterruptedException {
 		GiftCards.execution();
-	}
-	*/
+	}*/
 	@AfterTest
 	public void tearDown() {
 		DriverSetup.Kill();

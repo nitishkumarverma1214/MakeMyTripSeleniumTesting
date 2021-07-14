@@ -53,7 +53,6 @@ static String configFile = "src//test//resources//config.properties";
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(t);
 	}
-	
 	/*
 	@org.testng.annotations.Test
 	public void bookHotel() {

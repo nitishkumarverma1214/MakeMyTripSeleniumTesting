@@ -24,7 +24,17 @@ public class HotelBookingPage extends Baseclass {
 	static By hotelInput = By.xpath("//input[contains(@placeholder,' Hotel')]");
 	static By guest = By.cssSelector("#guest");
 	static By adultGuest = By.xpath("//ul[@data-cy='adultCount']/child::*");
+	static By travellingReason = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div/div/div[5]/label/span");
+	static By workOption = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div/div/div[5]/ul/li[1]");
 
+	public static void travellingReason() {
+		driver.findElement(travellingReason).click();
+	}
+	
+	public static void workOption() {
+		driver.findElement(workOption).click();
+	}
+	
 	public static void fillCity()  {
 		// fill the city value
 		driver.findElement(city).click();

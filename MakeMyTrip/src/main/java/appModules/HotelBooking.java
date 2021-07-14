@@ -35,7 +35,7 @@ public class HotelBooking extends Baseclass {
 	public static String websiteCheck() {
 		return driver.getTitle();
 	}
-	public static boolean elementClick() {
+	public static boolean hotelElement() {
 		 WebElement icon = LandingPage.hotelLink();
 		 boolean check = false;
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

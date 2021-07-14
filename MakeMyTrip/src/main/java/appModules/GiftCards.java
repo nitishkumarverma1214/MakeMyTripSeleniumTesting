@@ -1,5 +1,7 @@
 package appModules;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,4 +41,25 @@ public class GiftCards extends Baseclass {
 		GiftCardsDetailsPage.printErrorMessage();
 
 	}
+	public static boolean moremenuElement() {
+		 WebElement icon = LandingPage.moreMenu();
+		 boolean check = false;
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		if(icon.isDisplayed() && icon.isEnabled()) {
+				check=true;
+		}
+		return check;
+	 }
+	
+	public static boolean giftCardElement() {
+		 WebElement icon = LandingPage.moreMenu();
+		 boolean check = false;
+		 icon.click();
+		WebElement giftcardText = LandingPage.giftCardText();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		if(giftcardText.isDisplayed() && giftcardText.isEnabled()) {
+				check=true;
+		}
+		return check;
+	 }
 }

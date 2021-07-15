@@ -31,10 +31,11 @@ public class DriverSetup extends Baseclass {
 		DesiredCapabilities capabilities;
 		URL gridUrl;
 
-		gridUrl = new URL(" http://192.168.43.87:4445/wd/hub");
+		gridUrl = new URL("http://10.0.83.73:4445/wd/hub");
 		capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(browserName);
 		driver = new RemoteWebDriver(gridUrl, capabilities);
+		
 		openBrowser();
 
 	}

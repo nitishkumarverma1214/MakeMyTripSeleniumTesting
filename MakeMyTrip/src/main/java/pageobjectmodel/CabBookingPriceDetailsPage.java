@@ -22,6 +22,9 @@ public class CabBookingPriceDetailsPage extends Baseclass {
 		return suv;
 	}
 
+	public static String textCheckSuv() {
+		return driver.findElement(suv).getText();
+	}
 	public static void clickSUV() {
 		driver.findElement(suv).click();
 	}

@@ -63,7 +63,8 @@ public class CabBookingPage extends Baseclass {
 		}
 	}
 
-	public static void clickSearch() {
+	public static void clickSearch() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(backDropDiv).click();
 		driver.findElement(searchButton).click();
 		ReusableMethods.captureScreenShot(driver);

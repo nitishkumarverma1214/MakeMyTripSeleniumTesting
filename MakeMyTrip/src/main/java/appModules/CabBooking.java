@@ -16,7 +16,7 @@ import utilities.Baseclass;
 public class CabBooking extends Baseclass {
 
 	public CabBooking(WebDriver driver, WebElement element) {
-		super(driver,element);
+		super(driver, element);
 	}
 
 	public static void execution() {
@@ -54,4 +54,35 @@ public class CabBooking extends Baseclass {
 		return check;
 	 }
 
+	public static boolean validInputsCheck() {
+		try {
+			LandingPage.clickCabLink();
+			CabBookingPage.selectOneWay();
+			CabBookingPage.fillFromCity();
+			CabBookingPage.fillToCity();
+			CabBookingPage.fillDepartureDate();
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	public static String filtersCheck() throws InterruptedException {
+		CabBookingPage.clickSearch();
+		Thread.sleep(5000);
+		CabBookingPriceDetailsPage.clickSUV();
+		return CabBookingPriceDetailsPage.textCheckSuv();
+	}
+	
+	public static List<WebElement> priceDisplayCheck() throws InterruptedException {
+		Thread.sleep(5000);
+		List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
+		List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
+		for (int i = 0; i < li.size(); i++) {
+
+			System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+		}
+		return li1;
+	}
 }

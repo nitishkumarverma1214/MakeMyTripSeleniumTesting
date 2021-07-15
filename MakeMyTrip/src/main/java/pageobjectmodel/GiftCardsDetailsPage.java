@@ -26,7 +26,12 @@ public class GiftCardsDetailsPage extends Baseclass {
 	static By senderEmail = By.name("senderEmailId");
 	static By giftMessage = By.name("giftMessage");
 	static By buynowButtton = By.xpath("//button[contains(text(),'BUY NOW')]");
-	static By errorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[3]/p");
+	static By senderNameErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[2]/div[1]/p");
+	static By recipientNameErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[1]/p ");
+	static By senderMobileErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[2]/div[2]/div[2]/p");
+	static By recipientMobileErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[2]/div[2]/p");
+	static By senderMailErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[2]/div[3]/p");
+	static By recipientMailErrorMessage = By.xpath("//*[@id=\"deliveredSection\"]/div/div/div/div[1]/div/div[3]/p");
 	
 	public static void selectEmail() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,10);
@@ -56,10 +61,29 @@ public class GiftCardsDetailsPage extends Baseclass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(buynowButtton));
 		driver.findElement(buynowButtton).click();
 	}
+	public static void printRecipientMailErrorMessage() {
+		String errorText = driver.findElement(recipientMailErrorMessage).getText();
+		System.out.println(errorText);
+	}
+	public static void printSenderMailErrorMessage() {
+		String errorText = driver.findElement(senderMailErrorMessage).getText();
+		System.out.println(errorText);
+	}
+	public static void printRecipientMobileErrorMessage() {
+		String errorText = driver.findElement(recipientMobileErrorMessage).getText();
+		System.out.println(errorText);
+	}
+	public static void printRecipientNameErrorMessage() {
+		String errorText = driver.findElement(recipientNameErrorMessage).getText();
+		System.out.println(errorText);
+	}
+	public static void printSenderNameErrorMessage() {
+		String errorText = driver.findElement(senderNameErrorMessage).getText();
+		System.out.println(errorText);
+	}
 	
-	public static void printErrorMessage() {
-		String errorText = driver.findElement(errorMessage).getText();
-		ReusableMethods.captureScreenShot(driver);
+	public static void printSenderMobileErrorMessage() {
+		String errorText = driver.findElement(senderMobileErrorMessage).getText();
 		System.out.println(errorText);
 	}
 }

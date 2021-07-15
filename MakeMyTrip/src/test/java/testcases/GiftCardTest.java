@@ -36,7 +36,7 @@ public class GiftCardTest {
 	}
 	
 	@Test(priority=2)
-	public void giftCardTextTest() {
+	public void giftCardTextTest() throws InterruptedException {
 		boolean choice = GiftCards.giftCardElement();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);

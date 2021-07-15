@@ -14,7 +14,7 @@ import utilities.Baseclass;
 public class GiftCards extends Baseclass {
 
 	public GiftCards(WebDriver driver, WebElement element) {
-		super(driver,element);
+		super(driver, element);
 	}
 
 	public static void execution() throws InterruptedException {
@@ -38,7 +38,7 @@ public class GiftCards extends Baseclass {
 		GiftCardsDetailsPage.enterRecipientDetails("Me", "9014834542", "hi.com");
 		GiftCardsDetailsPage.addMessage("mithai lelo");
 		GiftCardsDetailsPage.clickBuyNow();
-		GiftCardsDetailsPage.printErrorMessage();
+		GiftCardsDetailsPage.printRecipientMailErrorMessage();
 
 	}
 	public static boolean moremenuElement() {
@@ -51,15 +51,17 @@ public class GiftCards extends Baseclass {
 		return check;
 	 }
 	
-	public static boolean giftCardElement() {
+	public static boolean giftCardElement() throws InterruptedException {
 		 WebElement icon = LandingPage.moreMenu();
 		 boolean check = false;
+		 Thread.sleep(3000);
 		 icon.click();
 		WebElement giftcardText = LandingPage.giftCardText();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		if(giftcardText.isDisplayed() && giftcardText.isEnabled()) {
 				check=true;
 		}
 		return check;
 	 }
+
 }

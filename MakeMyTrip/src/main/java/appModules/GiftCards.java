@@ -1,5 +1,6 @@
 package appModules;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,8 +11,11 @@ import pageobjectmodel.GiftCardsDetailsPage;
 import pageobjectmodel.GiftCardsPage;
 import pageobjectmodel.LandingPage;
 import utilities.Baseclass;
+import utilities.ExcelUtils;
 
 public class GiftCards extends Baseclass {
+	
+	static List<String> li=ExcelUtils.readExcel("GIFT CARD");
 
 	public GiftCards(WebDriver driver, WebElement element) {
 		super(driver, element);
@@ -34,9 +38,11 @@ public class GiftCards extends Baseclass {
 
 		GiftCardsDetailsPage.selectEmail();
 		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
-		GiftCardsDetailsPage.enterSenderDetails("PM", "9871923832", "pmo@gmail.com");
-		GiftCardsDetailsPage.enterRecipientDetails("Me", "9014834542", "hi.com");
-		GiftCardsDetailsPage.addMessage("mithai lelo");
+		
+		GiftCardsDetailsPage.enterSenderDetails(li.get(0), li.get(1), li.get(2));
+		GiftCardsDetailsPage.enterRecipientDetails(li.get(3), li.get(4), li.get(5));
+		GiftCardsDetailsPage.addMessage(li.get(6));
+		
 		GiftCardsDetailsPage.clickBuyNow();
 		GiftCardsDetailsPage.printRecipientMailErrorMessage();
 

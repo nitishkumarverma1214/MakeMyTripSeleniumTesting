@@ -1,5 +1,7 @@
 package appModules;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +14,7 @@ import pageobjectmodel.CabBookingPage;
 import pageobjectmodel.CabBookingPriceDetailsPage;
 import pageobjectmodel.LandingPage;
 import utilities.Baseclass;
+import utilities.ExcelUtils;
 
 public class CabBooking extends Baseclass {
 
@@ -26,6 +29,7 @@ public class CabBooking extends Baseclass {
 			CabBookingPage.fillFromCity();
 			CabBookingPage.fillToCity();
 			CabBookingPage.fillDepartureDate();
+		    CabBookingPage.fillTime();
 			CabBookingPage.clickSearch();
 			Thread.sleep(5000);
 
@@ -34,10 +38,29 @@ public class CabBooking extends Baseclass {
 			CabBookingPriceDetailsPage.clickSUV();
 			List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
 			List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
+			 
+			List<String> list1=new ArrayList<String>();
+			List<String> list2=new ArrayList<String>();
+		    list1.add("CAB NAME");
+		    list2.add("PRICE");
+		    
+			
+			
 			for (int i = 0; i < li.size(); i++) {
-
-				System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+                        list1.add(li.get(i).getText());
+                        list2.add(li1.get(i).getText().substring(1));
+                        
+			   	System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
 			}
+			
+			
+			try {
+				ExcelUtils.writeIntoExcel(list1, list2,"Sheet2");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

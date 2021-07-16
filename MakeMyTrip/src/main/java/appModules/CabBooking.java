@@ -29,7 +29,7 @@ public class CabBooking extends Baseclass {
 			CabBookingPage.fillFromCity();
 			CabBookingPage.fillToCity();
 			CabBookingPage.fillDepartureDate();
-		    CabBookingPage.fillTime();
+			CabBookingPage.fillTime();
 			CabBookingPage.clickSearch();
 			Thread.sleep(5000);
 
@@ -38,43 +38,40 @@ public class CabBooking extends Baseclass {
 			CabBookingPriceDetailsPage.clickSUV();
 			List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
 			List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
-			 
-			List<String> list1=new ArrayList<String>();
-			List<String> list2=new ArrayList<String>();
-		    list1.add("CAB NAME");
-		    list2.add("PRICE");
-		    
-			
-			
+
+			List<String> list1 = new ArrayList<String>();
+			List<String> list2 = new ArrayList<String>();
+			list1.add("CAB NAME");
+			list2.add("PRICE");
+
 			for (int i = 0; i < li.size(); i++) {
-                        list1.add(li.get(i).getText());
-                        list2.add(li1.get(i).getText().substring(1));
-                        
-			   	System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+				list1.add(li.get(i).getText());
+				list2.add(li1.get(i).getText().substring(1));
+
+				System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
 			}
-			
-			
+
 			try {
-				ExcelUtils.writeIntoExcel(list1, list2,"Sheet2");
+				ExcelUtils.writeIntoExcel(list1, list2, "Sheet2");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	public static boolean cabElement() {
-		 WebElement icon = LandingPage.cabLink();
-		 boolean check = false;
+		WebElement icon = LandingPage.cabLink();
+		boolean check = false;
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		if(icon.isDisplayed() && icon.isEnabled()) {
-				check=true;
+		if (icon.isDisplayed() && icon.isEnabled()) {
+			check = true;
 		}
 		return check;
-	 }
+	}
 
 	public static boolean validInputsCheck() {
 		try {
@@ -90,7 +87,7 @@ public class CabBooking extends Baseclass {
 		}
 		return true;
 	}
-	
+
 	public static String filtersCheck() throws InterruptedException {
 		
 		CabBookingPage.clickSearch();
@@ -98,7 +95,7 @@ public class CabBooking extends Baseclass {
 		CabBookingPriceDetailsPage.clickSUV();
 		return CabBookingPriceDetailsPage.textCheckSuv();
 	}
-	
+
 	public static List<WebElement> priceDisplayCheck() throws InterruptedException {
 		
 		List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();

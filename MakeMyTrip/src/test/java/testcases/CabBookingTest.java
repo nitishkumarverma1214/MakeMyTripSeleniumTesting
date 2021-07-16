@@ -40,25 +40,39 @@ public class CabBookingTest {
 	
 	@Test(priority=2)
 	public void validInputTest() {
-		boolean choice =CabBooking.validInputsCheck();
+		boolean choice = CabBooking.validInputsCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
 	
 	@Test(priority=3)
-	public void fiterTest() throws InterruptedException {
+	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
+		System.out.println(text);
 		SoftAssert sa = new SoftAssert();
-		sa.assertEquals("Suv",text);
+		sa.assertEquals("SUV",text);
 	}
 	
 	@Test(priority=4)
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
+		System.out.println(priceList.size());
 		SoftAssert sa = new SoftAssert();
-		sa.assertFalse(priceList.isEmpty());
+		if(priceList.size()==0) {
+			sa.assertTrue(false);
+		}
+		else {
+			sa.assertTrue(true);
+		}
+		
 	}
 
+/*	
+	@Test
+	public void buyGiftCard() throws InterruptedException {
+		CabBooking.execution();
+	}
+*/	
 	@AfterTest
 	public void tearDown() {
 		DriverSetup.Kill();

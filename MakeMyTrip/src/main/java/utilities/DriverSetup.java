@@ -31,7 +31,7 @@ public class DriverSetup extends Baseclass {
 		DesiredCapabilities capabilities;
 		URL gridUrl;
 
-		gridUrl = new URL("http://192.168.43.87:4445/wd/hub");
+		gridUrl = new URL("http://localhost:4445/wd/hub");
 		capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(browserName);
 		driver = new RemoteWebDriver(gridUrl, capabilities);
@@ -43,7 +43,7 @@ public class DriverSetup extends Baseclass {
 	// method for opening the browser and navigating to the url
 	public static void openBrowser() throws IOException {
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		fis = new FileInputStream("src//test//resources//config.properties");
 		prop = new Properties();
 		prop.load(fis);

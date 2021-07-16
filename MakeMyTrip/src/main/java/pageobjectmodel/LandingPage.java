@@ -63,5 +63,6 @@ public class LandingPage extends Baseclass {
 		driver.findElement(giftCardLink).click();
 
 	}
+	
 
 }

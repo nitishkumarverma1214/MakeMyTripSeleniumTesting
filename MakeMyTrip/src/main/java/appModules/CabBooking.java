@@ -54,7 +54,6 @@ public class CabBooking extends Baseclass {
 			try {
 				ExcelUtils.writeIntoExcel(list1, list2, "Sheet2");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -90,6 +89,7 @@ public class CabBooking extends Baseclass {
 	}
 
 	public static String filtersCheck() throws InterruptedException {
+		
 		CabBookingPage.clickSearch();
 		Thread.sleep(5000);
 		CabBookingPriceDetailsPage.clickSUV();
@@ -97,7 +97,7 @@ public class CabBooking extends Baseclass {
 	}
 
 	public static List<WebElement> priceDisplayCheck() throws InterruptedException {
-		Thread.sleep(5000);
+		
 		List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
 		List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
 		for (int i = 0; i < li.size(); i++) {

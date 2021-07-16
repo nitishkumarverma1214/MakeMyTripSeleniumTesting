@@ -15,7 +15,7 @@ import appModules.CabBooking;
 import appModules.GiftCards;
 import utilities.DriverSetup;
 
-public class CabBookingTest {
+public class CabBookingTest extends BaseTest {
 
 	static String configFile = "src//test//resources//config.properties";
 
@@ -31,48 +31,45 @@ public class CabBookingTest {
 
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void cabsElementTest() {
-		boolean choice =CabBooking.cabElement();
+		boolean choice = CabBooking.cabElement();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
-	
-	@Test(priority=2)
+
+	@Test(priority = 2)
 	public void validInputTest() {
 		boolean choice = CabBooking.validInputsCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
-	
-	@Test(priority=3)
+
+	@Test(priority = 3)
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
 		System.out.println(text);
 		SoftAssert sa = new SoftAssert();
-		sa.assertEquals("SUV",text);
+		sa.assertEquals("SUV", text);
 	}
-	
-	@Test(priority=4)
+
+	@Test(priority = 4)
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
 		System.out.println(priceList.size());
 		SoftAssert sa = new SoftAssert();
-		if(priceList.size()==0) {
+		if (priceList.size() == 0) {
 			sa.assertTrue(false);
-		}
-		else {
+		} else {
 			sa.assertTrue(true);
 		}
-		
+
 	}
 
-/*	
-	@Test
-	public void buyGiftCard() throws InterruptedException {
-		CabBooking.execution();
-	}
-*/	
+	/*
+	 * @Test public void buyGiftCard() throws InterruptedException {
+	 * CabBooking.execution(); }
+	 */
 	@AfterTest
 	public void tearDown() {
 		DriverSetup.Kill();

@@ -24,7 +24,6 @@ public class CabBooking extends Baseclass {
 	public CabBooking(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
-
 	public static void execution() {
 		try {
 			LandingPage.clickCabLink();
@@ -50,8 +49,6 @@ public class CabBooking extends Baseclass {
 				list1.add(li.get(i).getText());
 				list2.add(li1.get(i).getText().substring(1));
 				logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
-				// System.out.println(li.get(i).getText() + " -> Rs." +
-				// li1.get(i).getText().substring(1));
 			}
 
 			try {
@@ -76,7 +73,6 @@ public class CabBooking extends Baseclass {
 		}
 		return check;
 	}
-
 	/************* To check with valid inputs *************/
 	public static boolean validInputsCheck() {
 		try {
@@ -109,8 +105,6 @@ public class CabBooking extends Baseclass {
 		List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
 		for (int i = 0; i < li.size(); i++) {
 			logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
-			// System.out.println(li.get(i).getText() + " -> Rs." +
-			// li1.get(i).getText().substring(1));
 		}
 		return li1;
 	}

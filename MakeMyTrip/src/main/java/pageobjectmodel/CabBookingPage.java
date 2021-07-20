@@ -34,7 +34,7 @@ public class CabBookingPage extends Baseclass {
 	static By pickupTime = By.xpath("//span[contains(text(),'PICKUP-TIME')]");
 	static By timeDropDown = By.xpath("//ul[contains(@class,'timeDropDown')]/child::li");
 
-	/************* To  select one way radio button *************/
+	/************* To select one way radio button *************/
 	public static void selectOneWay() {
 		driver.findElement(oneWayLink).click();
 		ReusableMethods.captureScreenShot(driver);

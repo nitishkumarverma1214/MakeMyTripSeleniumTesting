@@ -18,7 +18,7 @@ public class CabBookingTest extends BaseTest {
 
 	static String configFile = "src//test//resources//config.properties";
 
-	@BeforeTest(groups= {"smoke","regression"})
+	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
 		try (FileInputStream fis = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
@@ -36,14 +36,15 @@ public class CabBookingTest extends BaseTest {
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
-	@Test(priority = 2,groups="regression")
+
+	@Test(priority = 2, groups = "regression")
 	public void validInputTest() {
 		boolean choice = CabBooking.validInputsCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
 
-	@Test(priority = 4,groups="regression")
+	@Test(priority = 4, groups = "regression")
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
 		System.out.println(text);
@@ -51,7 +52,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertEquals("SUV", text);
 	}
 
-	@Test(priority = 5,groups="regression")
+	@Test(priority = 5, groups = "regression")
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
 		System.out.println(priceList.size());
@@ -64,7 +65,7 @@ public class CabBookingTest extends BaseTest {
 
 	}
 
-	@Test(priority = 3,groups="regression")
+	@Test(priority = 3, groups = "regression")
 	public void titleTest() {
 		String title = CabBooking.cabTitleCheck();
 		System.out.println(title);
@@ -73,7 +74,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertAll();
 	}
 
-	@AfterTest(groups= {"smoke","regression"})
+	@AfterTest(groups = { "smoke", "regression" })
 	public void tearDown() {
 		DriverSetup.Kill();
 	}

@@ -28,7 +28,6 @@ public class HotelBooking extends Baseclass {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/*************** To check the website of the url **************/

@@ -7,7 +7,6 @@
   			<include name ="regression"/>
   		</run>
   	</groups>
-  	
     <classes>
       <class name="testcases.CabBookingTest"/>
     </classes>

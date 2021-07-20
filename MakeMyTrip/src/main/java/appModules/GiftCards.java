@@ -24,9 +24,7 @@ public class GiftCards extends Baseclass {
 	}
 	public static void execution() throws InterruptedException {
 		LandingPage.clickGiftCardsLink();
-
 		String parentWindow = driver.getWindowHandle();
-
 		for (String window : driver.getWindowHandles()) {
 			if (!window.equalsIgnoreCase(parentWindow)) {
 				driver.switchTo().window(window);

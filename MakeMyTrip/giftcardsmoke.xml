@@ -7,7 +7,6 @@
 				<include name="smoke" />
 			</run>
 		</groups>
-
 		<classes>
 			<class name="testcases.GiftCardTest" />
 		</classes>

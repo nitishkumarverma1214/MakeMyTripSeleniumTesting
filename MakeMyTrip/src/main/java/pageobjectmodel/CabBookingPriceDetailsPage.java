@@ -21,6 +21,7 @@ public class CabBookingPriceDetailsPage extends Baseclass {
 	public static By suvclickable() {
 		return suv;
 	}
+
 	/************* To check the suv name *************/
 	public static String textCheckSuv() {
 		return driver.findElement(suv).getText();

@@ -70,5 +70,4 @@ public class ReusableMethods {
 		}
 		driver.findElement(By.xpath("//div[@aria-label='" + parsedDate + "']")).click();
 	}
-
 }

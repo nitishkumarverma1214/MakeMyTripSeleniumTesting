@@ -11,20 +11,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Baseclass;
 
 public class GiftCardsPage extends Baseclass {
-	private static Logger logger =(Logger) LogManager.getLogger(GiftCardsPage.class);
+	private static Logger logger = (Logger) LogManager.getLogger(GiftCardsPage.class);
+
 	public GiftCardsPage(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
+
 	static By weddingGiftCard = By.xpath("//p[contains(text(),'Wedding Gift Card')]");
-	
- /*************** to select wedding gift card **************/	
+
+	/*************** to select wedding gift card **************/
 	public static void selectWeddingGiftCard() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(weddingGiftCard));
 		driver.findElement(weddingGiftCard).click();
 		logger.info("card clicked");
-		
-	} 
-	
-	
+
+	}
+
 }

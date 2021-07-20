@@ -32,7 +32,6 @@ public class HotelBookingTest extends BaseTest {
 		SoftAssert sa = new SoftAssert();
 		sa.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
 	}
-
 	@Test(priority = 1, groups = "smoke")
 	public void hotelIconTest() {
 		boolean t = HotelBooking.hotelElement();

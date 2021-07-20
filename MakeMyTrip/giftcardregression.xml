@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GiftCardRegression">
+  <test thread-count="5" name="GiftCardRegressionTest">
+   <groups>
+  		<run>
+  			<include name ="regression"/>
+  		</run>
+  	</groups>
+  	
+    <classes>
+      <class name="testcases.GiftCardTest"/>
+    </classes>
+  </test> <!-- GiftCardRegressionTest -->
+</suite> <!-- GiftCardRegression -->

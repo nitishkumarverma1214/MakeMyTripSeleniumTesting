@@ -12,14 +12,13 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import appModules.CabBooking;
-import appModules.GiftCards;
 import utilities.DriverSetup;
 
-public class CabBookingTest {
+public class CabBookingTest extends BaseTest {
 
 	static String configFile = "src//test//resources//config.properties";
 
-	@BeforeTest
+	@BeforeTest(groups= {"smoke","regression"})
 	public void setUp() {
 		try (FileInputStream fis = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
@@ -31,49 +30,50 @@ public class CabBookingTest {
 
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1, groups = "smoke")
 	public void cabsElementTest() {
-		boolean choice =CabBooking.cabElement();
+		boolean choice = CabBooking.cabElement();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
-	
-	@Test(priority=2)
+	@Test(priority = 2,groups="regression")
 	public void validInputTest() {
 		boolean choice = CabBooking.validInputsCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(choice);
 	}
-	
-	@Test(priority=3)
+
+	@Test(priority = 4,groups="regression")
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
 		System.out.println(text);
 		SoftAssert sa = new SoftAssert();
-		sa.assertEquals("SUV",text);
+		sa.assertEquals("SUV", text);
 	}
-	
-	@Test(priority=4)
+
+	@Test(priority = 5,groups="regression")
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
 		System.out.println(priceList.size());
 		SoftAssert sa = new SoftAssert();
-		if(priceList.size()==0) {
+		if (priceList.size() == 0) {
 			sa.assertTrue(false);
-		}
-		else {
+		} else {
 			sa.assertTrue(true);
 		}
-		
+
 	}
 
-/*	
-	@Test
-	public void buyGiftCard() throws InterruptedException {
-		CabBooking.execution();
+	@Test(priority = 3,groups="regression")
+	public void titleTest() {
+		String title = CabBooking.cabTitleCheck();
+		System.out.println(title);
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals(title, "Online Cab Booking - Book Outstation Cabs at Lowest Fare @ MakeMyTrip");
+		sa.assertAll();
 	}
-*/	
-	@AfterTest
+
+	@AfterTest(groups= {"smoke","regression"})
 	public void tearDown() {
 		DriverSetup.Kill();
 	}

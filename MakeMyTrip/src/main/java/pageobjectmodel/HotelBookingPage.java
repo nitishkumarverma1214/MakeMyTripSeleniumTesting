@@ -28,7 +28,6 @@ public class HotelBookingPage extends Baseclass {
 	static By adultGuest = By.xpath("//ul[@data-cy='adultCount']/child::*");
 	static By travellingReason = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div/div/div[5]/label/span");
 	static By workOption = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div/div/div[5]/ul/li[1]");
-
 	public static void travellingReason() {
 		driver.findElement(travellingReason).click();
 	}
@@ -36,7 +35,7 @@ public class HotelBookingPage extends Baseclass {
 	public static void workOption() {
 		driver.findElement(workOption).click();
 	}
-	
+	/************* to fill the city **************/
 	public static void fillCity()  {
 		// fill the city value
 		driver.findElement(city).click();
@@ -49,17 +48,17 @@ public class HotelBookingPage extends Baseclass {
 		ReusableMethods.captureScreenShot(driver);
 
 	}
-
+	/************* to select the Check In Date **************/
 	public static void selectCheckInDate() throws ParseException, InterruptedException {
 		String checkInDate = li.get(1).substring(1,li.get(1).length()-1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
-
+	/************* to select the Check out Date **************/
 	public static void selectCheckOutDate() throws ParseException, InterruptedException {
 		String checkInDate = li.get(2).substring(1,li.get(2).length()-1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
-
+	/************* to show Guest Count **************/
 	public static void showGuestCount()  {
 		driver.findElement(guest).click();
 		List<String> adultGuetsList = new ArrayList<String>();

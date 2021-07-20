@@ -20,5 +20,6 @@
       <class name="testcases.HotelBookingTest"/>
     </classes>
   </test> <!-- Test -->
+ 
   
 </suite> <!-- Suite -->

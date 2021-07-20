@@ -22,17 +22,22 @@ public class CabBookingPriceDetailsPage extends Baseclass {
 		return suv;
 	}
 
+	/************* To check the suv name *************/
 	public static String textCheckSuv() {
 		return driver.findElement(suv).getText();
 	}
+
+	/************* To select suv checkbox *************/
 	public static void clickSUV() {
 		driver.findElement(suv).click();
 	}
 
+	/************* To return list of car names *************/
 	public static List<WebElement> getCarNames() {
 		return driver.findElements(carname);
 	}
 
+	/************* To return list of car prices *************/
 	public static List<WebElement> getCarPrices() {
 		return driver.findElements(carprice);
 	}

@@ -15,7 +15,7 @@ import utilities.DriverSetup;
 public class HotelBookingTest extends BaseTest {
 	static String configFile = "src//test//resources//config.properties";
 
-	@BeforeTest
+	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
 		try (FileInputStream fis = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
@@ -26,39 +26,34 @@ public class HotelBookingTest extends BaseTest {
 		}
 	}
 
-	@Test
+	@Test(groups = "smoke")
 	public void titleTest() {
 		String title = HotelBooking.websiteCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
 	}
-
-	@Test(priority = 1)
+	@Test(priority = 1, groups = "smoke")
 	public void hotelIconTest() {
 		boolean t = HotelBooking.hotelElement();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(t);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, groups = "regression")
 	public void nonMandatoryFieldTest() {
 		boolean t = HotelBooking.nonMandatoryFieldCheck();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(t);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, groups = "regression")
 	public void validInputTest() {
 		boolean t = HotelBooking.validInputsTest();
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(t);
 	}
 
-	/*
-	 * @org.testng.annotations.Test public void bookHotel() {
-	 * HotelBooking.execution(); }
-	 */
-	@AfterTest
+	@AfterTest(groups = { "smoke", "regression" })
 	public void tearDown() {
 		DriverSetup.Kill();
 	}

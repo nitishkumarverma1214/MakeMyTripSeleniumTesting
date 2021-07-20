@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,11 +19,11 @@ import utilities.Baseclass;
 import utilities.ExcelUtils;
 
 public class CabBooking extends Baseclass {
+	private static Logger logger = (Logger) LogManager.getLogger(CabBooking.class);
 
 	public CabBooking(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
-
 	public static void execution() {
 		try {
 			LandingPage.clickCabLink();
@@ -32,7 +34,6 @@ public class CabBooking extends Baseclass {
 			CabBookingPage.fillTime();
 			CabBookingPage.clickSearch();
 			Thread.sleep(5000);
-
 			WebDriverWait wait = new WebDriverWait(driver, 15);
 			wait.until(ExpectedConditions.elementToBeClickable(CabBookingPriceDetailsPage.suvclickable()));
 			CabBookingPriceDetailsPage.clickSUV();
@@ -47,8 +48,7 @@ public class CabBooking extends Baseclass {
 			for (int i = 0; i < li.size(); i++) {
 				list1.add(li.get(i).getText());
 				list2.add(li1.get(i).getText().substring(1));
-
-				System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+				logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
 			}
 
 			try {
@@ -63,6 +63,7 @@ public class CabBooking extends Baseclass {
 
 	}
 
+	/************* To return if cab element is enabled or not *************/
 	public static boolean cabElement() {
 		WebElement icon = LandingPage.cabLink();
 		boolean check = false;
@@ -72,7 +73,7 @@ public class CabBooking extends Baseclass {
 		}
 		return check;
 	}
-
+	/************* To check with valid inputs *************/
 	public static boolean validInputsCheck() {
 		try {
 			LandingPage.clickCabLink();
@@ -88,22 +89,29 @@ public class CabBooking extends Baseclass {
 		return true;
 	}
 
+	/************* To check with filters *************/
 	public static String filtersCheck() throws InterruptedException {
-		
+
 		CabBookingPage.clickSearch();
 		Thread.sleep(5000);
 		CabBookingPriceDetailsPage.clickSUV();
 		return CabBookingPriceDetailsPage.textCheckSuv();
 	}
 
+	/************* To return list of cars with prices and names *************/
 	public static List<WebElement> priceDisplayCheck() throws InterruptedException {
-		
+
 		List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
 		List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
 		for (int i = 0; i < li.size(); i++) {
-
-			System.out.println(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+			logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
 		}
 		return li1;
 	}
+
+	/***************** To check the title of the page *********/
+	public static String cabTitleCheck() {
+		return driver.getTitle();
+	}
+
 }

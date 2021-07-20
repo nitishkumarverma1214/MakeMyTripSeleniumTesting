@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="HotelBookingSmokeSuite">
+	<test thread-count="5" name="HotelBookingSmokeTest">
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>		
+		<classes>
+			<class name="testcases.HotelBookingTest" />
+		</classes>
+	</test> <!-- HotelBookingSmokeTest -->
+</suite> <!-- HotelBookingSmokeSuite -->

@@ -3,6 +3,8 @@ package pageobjectmodel;
 import java.text.ParseException;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -16,6 +18,7 @@ import utilities.ExcelUtils;
 import utilities.ReusableMethods;
 
 public class CabBookingPage extends Baseclass {
+	private static Logger logger = (Logger) LogManager.getLogger(CabBookingPage.class);
 
 	public CabBookingPage(WebDriver driver, WebElement element) {
 		super(driver, element);
@@ -28,15 +31,16 @@ public class CabBookingPage extends Baseclass {
 	static By fromCityInput = By.xpath("//input[contains(@placeholder,'From')]");
 	static By toCityInput = By.xpath("//input[contains(@placeholder,'To')]");
 	static By searchButton = By.xpath("//a[contains(text(),'Search')]");
-
 	static By pickupTime = By.xpath("//span[contains(text(),'PICKUP-TIME')]");
 	static By timeDropDown = By.xpath("//ul[contains(@class,'timeDropDown')]/child::li");
 
+	/************* To select one way radio button *************/
 	public static void selectOneWay() {
 		driver.findElement(oneWayLink).click();
 		ReusableMethods.captureScreenShot(driver);
 	}
 
+	/************* To fill from source city input *************/
 	public static void fillFromCity() throws InterruptedException {
 		driver.findElement(fromCityLink).click();
 		driver.findElement(fromCityInput).sendKeys(li.get(0));
@@ -47,6 +51,7 @@ public class CabBookingPage extends Baseclass {
 		ReusableMethods.captureScreenShot(driver);
 	}
 
+	/************* To fill destination city input *************/
 	public static void fillToCity() throws InterruptedException {
 		driver.findElement(toCityInput).sendKeys(li.get(1));
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -56,6 +61,7 @@ public class CabBookingPage extends Baseclass {
 		ReusableMethods.captureScreenShot(driver);
 	}
 
+	/************* To fill the departure date *************/
 	public static void fillDepartureDate() {
 		try {
 			ReusableMethods.selectDate(driver, li.get(2).substring(1, li.get(2).length() - 1));
@@ -65,26 +71,25 @@ public class CabBookingPage extends Baseclass {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("departure date selected");
+		logger.info("departure date selected");
 	}
 
+	/************* To fill the pickup time *************/
 	public static void fillTime() {
-
-		System.out.println("filling pickup time");
+		logger.info("filling pickup time");
 		String time = li.get(3);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(timeDropDown));
 		List<WebElement> dropDown = driver.findElements(timeDropDown);
 
-		
 		for (WebElement li : dropDown) {
-			 JavascriptExecutor js = (JavascriptExecutor) driver;
-			 js.executeScript("arguments[0].scrollIntoView();", li);
-			 
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView();", li);
+
 			if (li.getText().contains(time.toUpperCase())) {
 				System.out.println("selecting the time");
-				
+
 				wait.until(ExpectedConditions.elementToBeClickable(li));
 				li.click();
 				break;
@@ -93,6 +98,7 @@ public class CabBookingPage extends Baseclass {
 
 	}
 
+	/************* To click search button *************/
 	public static void clickSearch() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton));

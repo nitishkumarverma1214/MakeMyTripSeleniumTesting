@@ -61,6 +61,16 @@ public class GiftCardTest extends BaseTest {
 	public Object[][] invalidEmail() {
 		return new Object[][] { { "hi.com" } };
 	}
+	
+	@DataProvider(name = "validDetails")
+	public Object[][] validDetails() {
+		return new Object[][] { { "sam" ,"ram","sam@gmail.com","ram@gmail.com","9090909090","0101010101"}};
+	}
+	
+	@DataProvider(name = "nonMandatoryFields")
+	public Object[][] nonMandatoryFields() {
+		return new Object[][] { { "sam" ,"ram","sam@gmail.com","ram@gmail.com","9090909090","0101010101","Wishing u a happy marriage"}};
+	}
 
 	/**************
 	 * Providing invalid sender mobile no
@@ -177,12 +187,47 @@ public class GiftCardTest extends BaseTest {
 
 	/************** verifying the page title ****************/
 	@Test(priority = 9, groups = "regression")
-	public void titleTest() {
+	public void giftCardTitleTest() {
 		String title = GiftCards.giftCardTitleCheck();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(title, "Gift Cards - Buy Gift Vouchers Online, Gift Vouchers | MakeMyTrip.com");
 	}
 
+	@Test(dataProvider = "validDetails",priority=10,groups="regression")
+	public void validInputs(String senderName,String recipientName,String senderEmail,String recipientEmail,String senderMobile,String recipientMobile) throws InterruptedException {
+		GiftCards.refreshPage();
+		GiftCardsDetailsPage.selectEmail();
+		GiftCardsDetailsPage.senderNameBox().sendKeys(senderName);
+		GiftCardsDetailsPage.recipientNameBox().sendKeys(recipientName);
+		GiftCardsDetailsPage.senderMobileTextBox().sendKeys(senderMobile);
+		GiftCardsDetailsPage.recipientMobileTextBox().sendKeys(recipientMobile);
+		GiftCardsDetailsPage.senderEmailBox().sendKeys(senderEmail);
+		GiftCardsDetailsPage.recipientEmailBox().sendKeys(recipientEmail);
+		GiftCardsDetailsPage.clickBuyNow();
+		Thread.sleep(2000);
+		GiftCards.checkPaymentPage();
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday",GiftCards.checkPaymentPage());
+	}
+	
+	@Test(dataProvider = "nonMandatoryFields",priority=11,groups="regression")
+	public void nonMandatoryFields(String senderName,String recipientName,String senderEmail,String recipientEmail,String senderMobile,String recipientMobile, String message) throws InterruptedException {
+		GiftCards.navigateBackPage(); ;
+		GiftCardsDetailsPage.selectEmail();
+		GiftCardsDetailsPage.senderNameBox().sendKeys(senderName);
+		GiftCardsDetailsPage.recipientNameBox().sendKeys(recipientName);
+		GiftCardsDetailsPage.senderMobileTextBox().sendKeys(senderMobile);
+		GiftCardsDetailsPage.recipientMobileTextBox().sendKeys(recipientMobile);
+		GiftCardsDetailsPage.senderEmailBox().sendKeys(senderEmail);
+		GiftCardsDetailsPage.recipientEmailBox().sendKeys(recipientEmail);
+		GiftCardsDetailsPage.giftMessageBox().sendKeys(message);
+		GiftCardsDetailsPage.clickBuyNow();
+		Thread.sleep(2000);
+		GiftCards.checkPaymentPage();
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday",GiftCards.checkPaymentPage());
+	}
+	
 	/***************** closing the browser *****************/
 	@AfterTest(groups = { "smoke", "regression" })
 	public void tearDown() {

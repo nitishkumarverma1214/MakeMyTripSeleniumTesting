@@ -17,11 +17,12 @@ import utilities.ExcelUtils;
 
 public class GiftCards extends Baseclass {
 
-	static List<String> xlReadData = ExcelUtils.readExcel("GIFT CARD");
+	static List<String> li = ExcelUtils.readExcel("GIFT CARD");
 
 	public GiftCards(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
+
 	public static void execution() throws InterruptedException {
 		LandingPage.clickGiftCardsLink();
 		String parentWindow = driver.getWindowHandle();
@@ -38,9 +39,9 @@ public class GiftCards extends Baseclass {
 		GiftCardsDetailsPage.selectEmail();
 		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
 
-		GiftCardsDetailsPage.enterSenderDetails(xlReadData.get(0), xlReadData.get(1), xlReadData.get(2));
-		GiftCardsDetailsPage.enterRecipientDetails(xlReadData.get(3), xlReadData.get(4), xlReadData.get(5));
-		GiftCardsDetailsPage.addMessage(xlReadData.get(6));
+		GiftCardsDetailsPage.enterSenderDetails(li.get(0), li.get(1), li.get(2));
+		GiftCardsDetailsPage.enterRecipientDetails(li.get(3), li.get(4), li.get(5));
+		GiftCardsDetailsPage.addMessage(li.get(6));
 
 		GiftCardsDetailsPage.clickBuyNow();
 		GiftCardsDetailsPage.printRecipientMailErrorMessage();
@@ -96,8 +97,30 @@ public class GiftCards extends Baseclass {
 		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
 	}
 
-	/************* To check the title of page *************/
+	/************* To check the title of giftcard page *************/
 	public static String giftCardTitleCheck() {
 		return driver.getTitle();
 	}
+
+	/************* To check the title of payment page *************/
+	public static String checkPaymentPage() {
+
+		String title = driver.getTitle();
+		return title;
+	}
+
+	/************* To refresh the current page *************/
+	public static void refreshPage() {
+		driver.navigate().refresh();
+		((JavascriptExecutor) driver).executeScript("scroll(0,-document.body.scrollHeight)");
+
+	}
+
+	/************* To navigate back to the previous page *************/
+	public static void navigateBackPage() {
+		driver.navigate().back();
+		((JavascriptExecutor) driver).executeScript("scroll(0,-document.body.scrollHeight)");
+
+	}
+	
 }

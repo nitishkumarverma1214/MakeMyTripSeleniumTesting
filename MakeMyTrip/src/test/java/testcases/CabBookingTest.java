@@ -21,9 +21,9 @@ public class CabBookingTest extends BaseTest {
 	/****************** browser setup and navigating to the url *******************/
 	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
-		try (FileInputStream fis = new FileInputStream(configFile);) {
+		try (FileInputStream inputStream = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
-			prop.load(fis);
+			prop.load(inputStream);
 			DriverSetup.Initiate(prop.getProperty("browserName"));
 		} catch (IOException io) {
 			io.printStackTrace();
@@ -35,16 +35,16 @@ public class CabBookingTest extends BaseTest {
 	@Test(priority = 1, groups = "smoke")
 	public void cabsElementTest() {
 		boolean choice = CabBooking.cabElement();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(choice);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/************** verifying the input field with valid input ***************/
 	@Test(priority = 2, groups = "regression")
 	public void validInputTest() {
 		boolean choice = CabBooking.validInputsCheck();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(choice);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/************* verifying the suv checkbox ***************/
@@ -52,8 +52,8 @@ public class CabBookingTest extends BaseTest {
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
 		System.out.println(text);
-		SoftAssert sa = new SoftAssert();
-		sa.assertEquals("SUV", text);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals("SUV", text);
 	}
 
 	/***************** verifying the prices of the cab *****************/
@@ -61,11 +61,11 @@ public class CabBookingTest extends BaseTest {
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
 		System.out.println(priceList.size());
-		SoftAssert sa = new SoftAssert();
+		SoftAssert softAssert = new SoftAssert();
 		if (priceList.size() == 0) {
-			sa.assertTrue(false);
+			softAssert.assertTrue(false);
 		} else {
-			sa.assertTrue(true);
+			softAssert.assertTrue(true);
 		}
 
 	}
@@ -75,9 +75,9 @@ public class CabBookingTest extends BaseTest {
 	public void titleTest() {
 		String title = CabBooking.cabTitleCheck();
 		System.out.println(title);
-		SoftAssert sa = new SoftAssert();
-		sa.assertEquals(title, "Online Cab Booking - Book Outstation Cabs at Lowest Fare @ MakeMyTrip");
-		sa.assertAll();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(title, "Online Cab Booking - Book Outstation Cabs at Lowest Fare @ MakeMyTrip");
+		softAssert.assertAll();
 	}
 
 	/***************** closing the browser *****************/

@@ -24,7 +24,7 @@ public class CabBookingPage extends Baseclass {
 		super(driver, element);
 	}
 
-	static List<String> li = ExcelUtils.readExcel("CAB");
+	static List<String> xlReadData = ExcelUtils.readExcel("CAB");
 
 	static By oneWayLink = By.xpath("//li[@data-cy='outstationOneWay']");
 	static By fromCityLink = By.cssSelector("#fromCity");
@@ -45,9 +45,9 @@ public class CabBookingPage extends Baseclass {
 	public static void fillFromCity() throws InterruptedException {
 		logger.info("filling the source city");
 		driver.findElement(fromCityLink).click();
-		driver.findElement(fromCityInput).sendKeys(li.get(0));
+		driver.findElement(fromCityInput).sendKeys(xlReadData.get(0));
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.textToBePresentInElementValue(fromCityInput, li.get(0)));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(fromCityInput, xlReadData.get(0)));
 		Thread.sleep(3000);
 		driver.findElement(fromCityInput).sendKeys(Keys.DOWN, Keys.RETURN);
 		ReusableMethods.captureScreenShot(driver);
@@ -56,9 +56,9 @@ public class CabBookingPage extends Baseclass {
 	/************* To fill destination city input *************/
 	public static void fillToCity() throws InterruptedException {
 		logger.info("filling the destination city");
-		driver.findElement(toCityInput).sendKeys(li.get(1));
+		driver.findElement(toCityInput).sendKeys(xlReadData.get(1));
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.textToBePresentInElementValue(toCityInput, li.get(1)));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(toCityInput, xlReadData.get(1)));
 		Thread.sleep(1000);
 		driver.findElement(toCityInput).sendKeys(Keys.DOWN, Keys.RETURN);
 		ReusableMethods.captureScreenShot(driver);
@@ -68,7 +68,7 @@ public class CabBookingPage extends Baseclass {
 	public static void fillDepartureDate() {
 		logger.info("filling the departure time");
 		try {
-			ReusableMethods.selectDate(driver, li.get(2).substring(1, li.get(2).length() - 1));
+			ReusableMethods.selectDate(driver, xlReadData.get(2).substring(1, xlReadData.get(2).length() - 1));
 			ReusableMethods.captureScreenShot(driver);
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class CabBookingPage extends Baseclass {
 	/************* To fill the pickup time *************/
 	public static void fillTime() {
 		logger.info("filling pickup time");
-		String time = li.get(3);
+		String time = xlReadData.get(3);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(timeDropDown));

@@ -82,7 +82,7 @@ public class ExcelUtils {
 					DataFormatter formatter = new DataFormatter();
 					String text = formatter.formatCellValue(cell);
 					details.add(text);
-					logger.info(text);
+//					logger.info(text);
 					// System.out.println(text);
 				}
 				break;

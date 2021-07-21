@@ -21,9 +21,9 @@ public class GiftCardTest extends BaseTest {
 	/****************** browser setup and navigating to the url *******************/
 	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
-		try (FileInputStream fis = new FileInputStream(configFile);) {
+		try (FileInputStream inputStream = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
-			prop.load(fis);
+			prop.load(inputStream);
 			DriverSetup.Initiate(prop.getProperty("browserName"));
 		} catch (IOException io) {
 			io.printStackTrace();
@@ -35,16 +35,16 @@ public class GiftCardTest extends BaseTest {
 	@Test(priority = 1, groups = "smoke")
 	public void moremenuElementTest() {
 		boolean choice = GiftCards.moremenuElement();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(choice);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/********* gift card is displayed and clickable *********/
 	@Test(priority = 2, groups = "smoke")
 	public void giftCardTextTest() throws InterruptedException {
 		boolean choice = GiftCards.giftCardElement();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(choice);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	@DataProvider(name = "mobileNumber")
@@ -77,8 +77,8 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/**************
@@ -96,8 +96,8 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/**************
@@ -114,8 +114,8 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/**************
@@ -133,8 +133,8 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/**************
@@ -151,8 +151,8 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/**************
@@ -171,16 +171,16 @@ public class GiftCardTest extends BaseTest {
 		} else {
 			answer = true;
 		}
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(answer);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(answer);
 	}
 
 	/************** verifying the page title ****************/
 	@Test(priority = 9, groups = "regression")
 	public void titleTest() {
 		String title = GiftCards.giftCardTitleCheck();
-		SoftAssert sa = new SoftAssert();
-		sa.assertEquals(title, "Gift Cards - Buy Gift Vouchers Online, Gift Vouchers | MakeMyTrip.com");
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(title, "Gift Cards - Buy Gift Vouchers Online, Gift Vouchers | MakeMyTrip.com");
 	}
 
 	/***************** closing the browser *****************/

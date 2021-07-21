@@ -18,9 +18,9 @@ public class HotelBookingTest extends BaseTest {
 	/****************** browser setup and navigating to the url *******************/
 	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
-		try (FileInputStream fis = new FileInputStream(configFile);) {
+		try (FileInputStream inputStream = new FileInputStream(configFile);) {
 			Properties prop = new Properties();
-			prop.load(fis);
+			prop.load(inputStream);
 			DriverSetup.Initiate(prop.getProperty("browserName"));
 		} catch (IOException io) {
 			io.printStackTrace();
@@ -31,32 +31,32 @@ public class HotelBookingTest extends BaseTest {
 	@Test(groups = "smoke")
 	public void titleTest() {
 		String title = HotelBooking.websiteCheck();
-		SoftAssert sa = new SoftAssert();
-		sa.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
 	}
 
 	/********* hotel icon is displayed and clickable *********/
 	@Test(priority = 1, groups = "smoke")
 	public void hotelIconTest() {
-		boolean t = HotelBooking.hotelElement();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(t);
+		boolean choice = HotelBooking.hotelElement();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/************** verifying the non mandatory fields ***************/
 	@Test(priority = 3, groups = "regression")
 	public void nonMandatoryFieldTest() {
-		boolean t = HotelBooking.nonMandatoryFieldCheck();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(t);
+		boolean choice = HotelBooking.nonMandatoryFieldCheck();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/************** verifying the input field with valid input ***************/
 	@Test(priority = 2, groups = "regression")
 	public void validInputTest() {
-		boolean t = HotelBooking.validInputsTest();
-		SoftAssert sa = new SoftAssert();
-		sa.assertTrue(t);
+		boolean choice = HotelBooking.validInputsTest();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(choice);
 	}
 
 	/***************** closing the browser *****************/

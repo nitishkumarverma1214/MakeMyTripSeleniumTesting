@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverSetup extends Baseclass {
-	static FileInputStream fis;
+	static FileInputStream inputStream;
 	static Properties prop;
 
 	public DriverSetup(WebDriver driver, WebElement element) {
@@ -37,9 +37,9 @@ public class DriverSetup extends Baseclass {
 	public static void openBrowser() throws IOException {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		fis = new FileInputStream("src//test//resources//config.properties");
+		inputStream = new FileInputStream("src//test//resources//config.properties");
 		prop = new Properties();
-		prop.load(fis);
+		prop.load(inputStream);
 		driver.get(prop.getProperty("baseurl"));
 	}
 

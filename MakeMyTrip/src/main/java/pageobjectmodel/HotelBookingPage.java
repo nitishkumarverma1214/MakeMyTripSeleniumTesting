@@ -25,7 +25,7 @@ public class HotelBookingPage extends Baseclass {
 		super(driver, element);
 	}
 
-	static List<String> li = ExcelUtils.readExcel("Hotel");
+	static List<String> xlReadData = ExcelUtils.readExcel("Hotel");
 	static By city = By.cssSelector("#city");
 	static By hotelInput = By.xpath("//input[contains(@placeholder,' Hotel')]");
 	static By guest = By.cssSelector("#guest");
@@ -46,11 +46,11 @@ public class HotelBookingPage extends Baseclass {
 		logger.info("filling the hotel city");
 		// fill the city value
 		driver.findElement(city).click();
-		driver.findElement(hotelInput).sendKeys(li.get(0));
+		driver.findElement(hotelInput).sendKeys(xlReadData.get(0));
 
 		// wait for the input
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.textToBePresentInElementValue(hotelInput, li.get(0)));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(hotelInput, xlReadData.get(0)));
 		driver.findElement(hotelInput).sendKeys(Keys.DOWN, Keys.RETURN);
 		ReusableMethods.captureScreenShot(driver);
 
@@ -59,14 +59,14 @@ public class HotelBookingPage extends Baseclass {
 	/************* to select the Check In Date **************/
 	public static void selectCheckInDate() throws ParseException, InterruptedException {
 		logger.info("selecting the check in date");
-		String checkInDate = li.get(1).substring(1, li.get(1).length() - 1);
+		String checkInDate = xlReadData.get(1).substring(1, xlReadData.get(1).length() - 1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
 
 	/************* to select the Check out Date **************/
 	public static void selectCheckOutDate() throws ParseException, InterruptedException {
 		logger.info("selecting the check out date");
-		String checkInDate = li.get(2).substring(1, li.get(2).length() - 1);
+		String checkInDate = xlReadData.get(2).substring(1, xlReadData.get(2).length() - 1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
 

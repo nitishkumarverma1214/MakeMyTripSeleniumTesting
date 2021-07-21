@@ -37,23 +37,23 @@ public class CabBooking extends Baseclass {
 			WebDriverWait wait = new WebDriverWait(driver, 15);
 			wait.until(ExpectedConditions.elementToBeClickable(CabBookingPriceDetailsPage.suvclickable()));
 			CabBookingPriceDetailsPage.clickSUV();
-			List<WebElement> li = CabBookingPriceDetailsPage.getCarNames();
-			List<WebElement> li1 = CabBookingPriceDetailsPage.getCarPrices();
+			List<WebElement>  cabNameElements = CabBookingPriceDetailsPage.getCarNames();
+			List<WebElement> cabPriceElements = CabBookingPriceDetailsPage.getCarPrices();
 
-			List<String> list1 = new ArrayList<String>();
-			List<String> list2 = new ArrayList<String>();
-			list1.add("CAB NAME");
-			list2.add("PRICE");
+			List<String> cabNameList = new ArrayList<String>();
+			List<String> cabPriceList = new ArrayList<String>();
+			cabNameList.add("CAB NAME");
+			cabPriceList.add("PRICE");
 
-			for (int i = 0; i < li.size(); i++) {
-				list1.add(li.get(i).getText());
-				list2.add(li1.get(i).getText().substring(1));
+			for (int i = 0; i <  cabNameElements.size(); i++) {
+				cabNameList.add( cabNameElements.get(i).getText());
+				cabPriceList.add(cabPriceElements.get(i).getText().substring(1));
 				logger.info("Lowest Cab Prices");
-				logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
+				logger.info( cabNameElements.get(i).getText() + " -> Rs." + cabPriceElements.get(i).getText().substring(1));
 			}
 
 			try {
-				ExcelUtils.writeIntoExcel(list1, list2, "Sheet2");
+				ExcelUtils.writeIntoExcel(cabNameList, cabPriceList, "Sheet2");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

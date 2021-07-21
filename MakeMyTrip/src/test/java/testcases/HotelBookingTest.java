@@ -29,7 +29,7 @@ public class HotelBookingTest extends BaseTest {
 
 	/************** verifying the page title ****************/
 	@Test(groups = "smoke")
-	public void titleTest() {
+	public void wesiteTitleTest() {
 		String title = HotelBooking.websiteCheck();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);

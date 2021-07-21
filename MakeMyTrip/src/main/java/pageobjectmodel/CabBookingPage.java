@@ -36,12 +36,14 @@ public class CabBookingPage extends Baseclass {
 
 	/************* To select one way radio button *************/
 	public static void selectOneWay() {
+		logger.info("Select the one way radio button");
 		driver.findElement(oneWayLink).click();
 		ReusableMethods.captureScreenShot(driver);
 	}
 
 	/************* To fill from source city input *************/
 	public static void fillFromCity() throws InterruptedException {
+		logger.info("filling the source city");
 		driver.findElement(fromCityLink).click();
 		driver.findElement(fromCityInput).sendKeys(li.get(0));
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -53,6 +55,7 @@ public class CabBookingPage extends Baseclass {
 
 	/************* To fill destination city input *************/
 	public static void fillToCity() throws InterruptedException {
+		logger.info("filling the destination city");
 		driver.findElement(toCityInput).sendKeys(li.get(1));
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.textToBePresentInElementValue(toCityInput, li.get(1)));
@@ -63,6 +66,7 @@ public class CabBookingPage extends Baseclass {
 
 	/************* To fill the departure date *************/
 	public static void fillDepartureDate() {
+		logger.info("filling the departure time");
 		try {
 			ReusableMethods.selectDate(driver, li.get(2).substring(1, li.get(2).length() - 1));
 			ReusableMethods.captureScreenShot(driver);
@@ -71,7 +75,6 @@ public class CabBookingPage extends Baseclass {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		logger.info("departure date selected");
 	}
 
 	/************* To fill the pickup time *************/
@@ -100,6 +103,7 @@ public class CabBookingPage extends Baseclass {
 
 	/************* To click search button *************/
 	public static void clickSearch() {
+		logger.info("click the search button");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 

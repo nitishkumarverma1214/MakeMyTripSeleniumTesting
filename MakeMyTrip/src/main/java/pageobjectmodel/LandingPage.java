@@ -1,5 +1,7 @@
 package pageobjectmodel;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import utilities.Baseclass;
 
 public class LandingPage extends Baseclass {
+	private static Logger logger = (Logger) LogManager.getLogger(LandingPage.class);
 
 	public LandingPage(WebDriver driver, WebElement element) {
 		super(driver, element);
@@ -51,18 +54,21 @@ public class LandingPage extends Baseclass {
 
 	/********** To click Hotel Link ***********/
 	public static void clickHotelLink() {
+		logger.info("clicking the hotel icon");
 		closeLoginWindow();
 		driver.findElement(hotelLink).click();
 	}
 
 	/********** To click Cab Link ***********/
 	public static void clickCabLink() {
+		logger.info("clicking the cab icon");
 		closeLoginWindow();
 		driver.findElement(cabLink).click();
 	}
 
 	/********** To click Gift Cards Link ***********/
 	public static void clickGiftCardsLink() {
+		logger.info("clicking the gift card");
 		closeLoginWindow();
 		// Hover over More Menu
 		Actions action = new Actions(driver);

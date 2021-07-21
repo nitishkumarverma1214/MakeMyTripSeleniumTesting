@@ -1,0 +1,36 @@
+[INFO ] 2021-07-21 11:35:58.470 [main] ExcelUtils - initializing read Excel
+[INFO ] 2021-07-21 11:36:01.126 [main] ExcelUtils - Delhi
+[INFO ] 2021-07-21 11:36:01.127 [main] ExcelUtils - Manali
+[INFO ] 2021-07-21 11:36:01.128 [main] ExcelUtils - "28/07/2021"
+[INFO ] 2021-07-21 11:36:01.193 [main] ExcelUtils - 06:30 pm
+[INFO ] 2021-07-21 11:36:01.455 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:36:11.992 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:36:16.551 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:36:19.929 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:36:29.767 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:36:58.971 [main] ExcelUtils - initializing read Excel
+[INFO ] 2021-07-21 11:36:59.104 [main] ExcelUtils - Saurav
+[INFO ] 2021-07-21 11:36:59.106 [main] ExcelUtils - 1234567890
+[INFO ] 2021-07-21 11:36:59.106 [main] ExcelUtils - saurav@gmail.com
+[INFO ] 2021-07-21 11:36:59.107 [main] ExcelUtils - Praphul 
+[INFO ] 2021-07-21 11:36:59.108 [main] ExcelUtils - 9044096545
+[INFO ] 2021-07-21 11:36:59.108 [main] ExcelUtils - praphul.com
+[INFO ] 2021-07-21 11:36:59.109 [main] ExcelUtils - mithai lelo
+[INFO ] 2021-07-21 11:37:51.384 [main] ExcelUtils - initializing read Excel
+[INFO ] 2021-07-21 11:37:51.450 [main] ExcelUtils - Delhi
+[INFO ] 2021-07-21 11:37:51.450 [main] ExcelUtils - "24/07/2021"
+[INFO ] 2021-07-21 11:37:51.451 [main] ExcelUtils - "26/07/2021"
+[INFO ] 2021-07-21 11:37:52.895 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:38:00.334 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 11:38:09.814 [main] ReusableMethods - Taking the screenshot
+[INFO ] 2021-07-21 15:31:06.745 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 15:31:10.630 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 15:31:18.393 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 15:31:23.272 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 15:31:26.612 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 15:31:30.645 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 15:31:43.472 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 15:31:43.744 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 15:31:43.801 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 15:31:43.831 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 15:32:22.764 [main] GiftCardsPage - card clicked

@@ -48,6 +48,7 @@ public class CabBooking extends Baseclass {
 			for (int i = 0; i < li.size(); i++) {
 				list1.add(li.get(i).getText());
 				list2.add(li1.get(i).getText().substring(1));
+				logger.info("Lowest Cab Prices");
 				logger.info(li.get(i).getText() + " -> Rs." + li1.get(i).getText().substring(1));
 			}
 

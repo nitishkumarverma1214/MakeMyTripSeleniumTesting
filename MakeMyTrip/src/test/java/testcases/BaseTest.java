@@ -13,6 +13,7 @@ public class BaseTest {
 	public static ExtentTest test;
 	public static ExtentReports report;
 
+	/**************** Setup for extent report *****************/
 	@BeforeSuite
 	public void reportSetup() {
 		report = new ExtentReports(System.getProperty("user.dir") + "/test-output/ExtentReportResults.html");
@@ -21,6 +22,7 @@ public class BaseTest {
 
 	}
 
+	/************ Processing the result after each testcase ****************/
 	@AfterMethod
 	public void getResult(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
@@ -34,6 +36,7 @@ public class BaseTest {
 		}
 	}
 
+	/***************** flushing the details to report ********************/
 	@AfterSuite
 	public void reportTearDown() {
 		report.flush();

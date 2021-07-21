@@ -18,6 +18,7 @@ public class CabBookingTest extends BaseTest {
 
 	static String configFile = "src//test//resources//config.properties";
 
+	/****************** browser setup and navigating to the url *******************/
 	@BeforeTest(groups = { "smoke", "regression" })
 	public void setUp() {
 		try (FileInputStream fis = new FileInputStream(configFile);) {
@@ -30,6 +31,7 @@ public class CabBookingTest extends BaseTest {
 
 	}
 
+	/********* cab icon is displayed and clickable *********/
 	@Test(priority = 1, groups = "smoke")
 	public void cabsElementTest() {
 		boolean choice = CabBooking.cabElement();
@@ -37,6 +39,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertTrue(choice);
 	}
 
+	/************** verifying the input field with valid input ***************/
 	@Test(priority = 2, groups = "regression")
 	public void validInputTest() {
 		boolean choice = CabBooking.validInputsCheck();
@@ -44,6 +47,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertTrue(choice);
 	}
 
+	/************* verifying the suv checkbox ***************/
 	@Test(priority = 4, groups = "regression")
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
@@ -52,6 +56,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertEquals("SUV", text);
 	}
 
+	/***************** verifying the prices of the cab *****************/
 	@Test(priority = 5, groups = "regression")
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
@@ -65,6 +70,7 @@ public class CabBookingTest extends BaseTest {
 
 	}
 
+	/************** verifying the page title ****************/
 	@Test(priority = 3, groups = "regression")
 	public void titleTest() {
 		String title = CabBooking.cabTitleCheck();
@@ -74,6 +80,7 @@ public class CabBookingTest extends BaseTest {
 		sa.assertAll();
 	}
 
+	/***************** closing the browser *****************/
 	@AfterTest(groups = { "smoke", "regression" })
 	public void tearDown() {
 		DriverSetup.Kill();

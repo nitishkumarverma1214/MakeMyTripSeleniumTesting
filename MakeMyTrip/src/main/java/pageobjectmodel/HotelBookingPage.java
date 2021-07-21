@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +19,7 @@ import utilities.ExcelUtils;
 import utilities.ReusableMethods;
 
 public class HotelBookingPage extends Baseclass {
+	private static Logger logger = (Logger) LogManager.getLogger(HotelBookingPage.class);
 
 	public HotelBookingPage(WebDriver driver, WebElement element) {
 		super(driver, element);
@@ -40,6 +43,7 @@ public class HotelBookingPage extends Baseclass {
 
 	/************* to fill the city **************/
 	public static void fillCity() {
+		logger.info("filling the hotel city");
 		// fill the city value
 		driver.findElement(city).click();
 		driver.findElement(hotelInput).sendKeys(li.get(0));
@@ -54,18 +58,21 @@ public class HotelBookingPage extends Baseclass {
 
 	/************* to select the Check In Date **************/
 	public static void selectCheckInDate() throws ParseException, InterruptedException {
+		logger.info("selecting the check in date");
 		String checkInDate = li.get(1).substring(1, li.get(1).length() - 1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
 
 	/************* to select the Check out Date **************/
 	public static void selectCheckOutDate() throws ParseException, InterruptedException {
+		logger.info("selecting the check out date");
 		String checkInDate = li.get(2).substring(1, li.get(2).length() - 1);
 		ReusableMethods.selectDate(driver, checkInDate);
 	}
 
 	/************* to show Guest Count **************/
 	public static void showGuestCount() {
+		logger.info("Capturing the guest count");
 		driver.findElement(guest).click();
 		List<String> adultGuetsList = new ArrayList<String>();
 		// wait for the list to become visible

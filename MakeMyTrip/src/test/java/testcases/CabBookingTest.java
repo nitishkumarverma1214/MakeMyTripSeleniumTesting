@@ -46,8 +46,17 @@ public class CabBookingTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertTrue(choice);
 	}
-	
-	
+
+	/************** verifying the page title ****************/
+	@Test(priority = 3, groups = "regression")
+	public void titleTest() {
+		String title = CabBooking.cabTitleCheck();
+		System.out.println(title);
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(title, "Online Cab Booking - Book Outstation Cabs at Lowest Fare @ MakeMyTrip");
+		softAssert.assertAll();
+	}
+
 	/************* verifying the Price Order of Cab ***************/
 	@Test(priority = 4, groups = "regression")
 	public void sortedPriceOrderCar() throws InterruptedException {
@@ -58,8 +67,6 @@ public class CabBookingTest extends BaseTest {
 		softAssert.assertEquals("(Lowest to Highest)", text);
 		System.out.println("**************");
 	}
-	
-	
 
 	/************* verifying the suv checkbox ***************/
 	@Test(priority = 5, groups = "regression")
@@ -69,8 +76,6 @@ public class CabBookingTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals("SUV", text);
 	}
-	
-	
 
 	/***************** verifying the prices of the cab *****************/
 	@Test(priority = 6, groups = "regression")
@@ -84,16 +89,6 @@ public class CabBookingTest extends BaseTest {
 			softAssert.assertTrue(true);
 		}
 
-	}
-
-	/************** verifying the page title ****************/
-	@Test(priority = 3, groups = "regression")
-	public void titleTest() {
-		String title = CabBooking.cabTitleCheck();
-		System.out.println(title);
-		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertEquals(title, "Online Cab Booking - Book Outstation Cabs at Lowest Fare @ MakeMyTrip");
-		softAssert.assertAll();
 	}
 
 	/***************** closing the browser *****************/

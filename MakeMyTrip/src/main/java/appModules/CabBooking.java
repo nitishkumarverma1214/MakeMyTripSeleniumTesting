@@ -24,6 +24,7 @@ public class CabBooking extends Baseclass {
 	public CabBooking(WebDriver driver, WebElement element) {
 		super(driver, element);
 	}
+
 	public static void execution() {
 		try {
 			LandingPage.clickCabLink();
@@ -37,7 +38,7 @@ public class CabBooking extends Baseclass {
 			WebDriverWait wait = new WebDriverWait(driver, 15);
 			wait.until(ExpectedConditions.elementToBeClickable(CabBookingPriceDetailsPage.suvclickable()));
 			CabBookingPriceDetailsPage.clickSUV();
-			List<WebElement>  cabNameElements = CabBookingPriceDetailsPage.getCarNames();
+			List<WebElement> cabNameElements = CabBookingPriceDetailsPage.getCarNames();
 			List<WebElement> cabPriceElements = CabBookingPriceDetailsPage.getCarPrices();
 
 			List<String> cabNameList = new ArrayList<String>();
@@ -45,11 +46,12 @@ public class CabBooking extends Baseclass {
 			cabNameList.add("CAB NAME");
 			cabPriceList.add("PRICE");
 
-			for (int i = 0; i <  cabNameElements.size(); i++) {
-				cabNameList.add( cabNameElements.get(i).getText());
+			for (int i = 0; i < cabNameElements.size(); i++) {
+				cabNameList.add(cabNameElements.get(i).getText());
 				cabPriceList.add(cabPriceElements.get(i).getText().substring(1));
 				logger.info("Lowest Cab Prices");
-				logger.info( cabNameElements.get(i).getText() + " -> Rs." + cabPriceElements.get(i).getText().substring(1));
+				logger.info(
+						cabNameElements.get(i).getText() + " -> Rs." + cabPriceElements.get(i).getText().substring(1));
 			}
 
 			try {
@@ -74,6 +76,7 @@ public class CabBooking extends Baseclass {
 		}
 		return check;
 	}
+
 	/************* To check with valid inputs *************/
 	public static boolean validInputsCheck() {
 		try {
@@ -89,7 +92,7 @@ public class CabBooking extends Baseclass {
 		}
 		return true;
 	}
-	
+
 	/************* To check with Sorted Order(Price) of Cars *************/
 	public static String sortedCarOrder() throws InterruptedException {
 
@@ -97,7 +100,6 @@ public class CabBooking extends Baseclass {
 		Thread.sleep(5000);
 		return CabBookingPriceDetailsPage.sortedPriceBy();
 	}
-
 
 	/************* To check with filters *************/
 	public static String filtersCheck() throws InterruptedException {

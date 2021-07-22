@@ -18,6 +18,7 @@ public class CabBookingPriceDetailsPage extends Baseclass {
 	}
 
 	static By suv = By.xpath("//label[contains(text(),'SUV')]");
+	static By priceSortedOrder =  By.xpath("//div[@class='blueGradientBG paddingTB24 cabSorter']/descendant::span/span[2]/span[2]");
 	static By carname = By.xpath("//div[@class='cabImage']/parent::div/div[2]/descendant::span[1]");
 	static By carprice = By.xpath("//div[@class='cabImage']/parent::div/div[3]/descendant::p[1]");
 
@@ -48,4 +49,10 @@ public class CabBookingPriceDetailsPage extends Baseclass {
 		logger.info("Finding the prices of cabs");
 		return driver.findElements(carprice);
 	}
+	
+	public static String sortedPriceBy() {
+		logger.info("verifying the Sorted Order of Cab Prices");
+		return driver.findElement(priceSortedOrder).getText();
+	}
+	
 }

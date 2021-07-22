@@ -46,18 +46,34 @@ public class CabBookingTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertTrue(choice);
 	}
+	
+	
+	/************* verifying the Price Order of Cab ***************/
+	@Test(priority = 4, groups = "regression")
+	public void sortedPriceOrderCar() throws InterruptedException {
+		String text = CabBooking.sortedCarOrder();
+		System.out.println(text);
+		System.out.println("**********");
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals("(Lowest to Highest)", text);
+		System.out.println("**************");
+	}
+	
+	
 
 	/************* verifying the suv checkbox ***************/
-	@Test(priority = 4, groups = "regression")
+	@Test(priority = 5, groups = "regression")
 	public void filterTest() throws InterruptedException {
 		String text = CabBooking.filtersCheck();
 		System.out.println(text);
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals("SUV", text);
 	}
+	
+	
 
 	/***************** verifying the prices of the cab *****************/
-	@Test(priority = 5, groups = "regression")
+	@Test(priority = 6, groups = "regression")
 	public void priceShowTest() throws InterruptedException {
 		List<WebElement> priceList = CabBooking.priceDisplayCheck();
 		System.out.println(priceList.size());

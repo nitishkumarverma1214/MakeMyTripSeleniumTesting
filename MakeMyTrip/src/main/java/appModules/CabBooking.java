@@ -89,12 +89,19 @@ public class CabBooking extends Baseclass {
 		}
 		return true;
 	}
+	
+	/************* To check with Sorted Order(Price) of Cars *************/
+	public static String sortedCarOrder() throws InterruptedException {
+
+		CabBookingPage.clickSearch();
+		Thread.sleep(5000);
+		return CabBookingPriceDetailsPage.sortedPriceBy();
+	}
+
 
 	/************* To check with filters *************/
 	public static String filtersCheck() throws InterruptedException {
 
-		CabBookingPage.clickSearch();
-		Thread.sleep(5000);
 		CabBookingPriceDetailsPage.clickSUV();
 		return CabBookingPriceDetailsPage.textCheckSuv();
 	}

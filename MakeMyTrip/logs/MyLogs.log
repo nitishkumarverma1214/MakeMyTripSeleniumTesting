@@ -34,3 +34,190 @@
 [INFO ] 2021-07-21 16:59:19.513 [main] HotelBookingPage - Capturing the guest count
 [INFO ] 2021-07-21 16:59:23.843 [main] LandingPage - clicking the hotel icon
 [INFO ] 2021-07-21 16:59:29.137 [main] HotelBookingPage - filling the hotel city
+[INFO ] 2021-07-21 19:41:06.734 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 19:41:27.089 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 19:41:32.858 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 19:41:46.457 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 19:41:51.549 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 19:41:55.396 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 19:41:58.512 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 19:42:12.671 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 19:42:13.071 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 19:42:13.166 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 19:42:18.202 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 19:42:42.659 [main] LandingPage - clicking the gift card
+[INFO ] 2021-07-21 19:43:04.469 [main] GiftCardsPage - card clicked
+[INFO ] 2021-07-21 19:44:05.338 [main] LandingPage - clicking the hotel icon
+[INFO ] 2021-07-21 19:44:11.563 [main] HotelBookingPage - filling the hotel city
+[INFO ] 2021-07-21 19:44:17.940 [main] HotelBookingPage - selecting the check in date
+[INFO ] 2021-07-21 19:44:18.210 [main] HotelBookingPage - selecting the check out date
+[INFO ] 2021-07-21 19:44:18.741 [main] HotelBookingPage - Capturing the guest count
+[INFO ] 2021-07-21 19:44:25.626 [main] LandingPage - clicking the hotel icon
+[INFO ] 2021-07-21 19:44:31.033 [main] HotelBookingPage - filling the hotel city
+[INFO ] 2021-07-21 19:58:23.597 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 19:58:34.907 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 19:58:44.111 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 19:58:54.818 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 19:59:01.068 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 19:59:05.832 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 19:59:11.210 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 19:59:32.489 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-21 19:59:32.782 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 19:59:33.345 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 19:59:33.430 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 19:59:38.495 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:02:03.878 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:02:08.290 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:02:13.266 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:02:23.175 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:02:28.483 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:02:35.226 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:02:36.619 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:02:41.677 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:02:46.738 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:03:50.325 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:04:06.169 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:04:10.856 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:04:19.232 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:04:24.373 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:04:28.673 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:04:32.012 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:04:46.645 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-21 20:04:46.833 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:04:47.318 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 20:04:47.385 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:04:52.436 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:06:05.623 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:06:10.165 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:06:14.639 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:06:22.135 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:06:27.269 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:06:31.292 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:06:35.624 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:06:36.986 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:06:42.069 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:06:47.112 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:07:24.787 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:07:28.318 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:07:32.338 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:07:39.747 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:07:45.517 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:07:49.211 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:07:53.410 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:07:54.751 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:07:59.858 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:08:04.924 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:09:38.389 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:09:59.009 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:10:03.728 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:10:12.675 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:10:17.784 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:10:22.080 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:10:25.653 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:10:43.986 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-21 20:10:44.589 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:10:45.293 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 20:10:45.442 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:10:50.468 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:14:37.839 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:14:47.762 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:14:51.866 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:14:59.547 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:15:05.074 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:15:09.528 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:15:14.272 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:15:19.354 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:15:24.430 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:16:15.632 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:16:30.747 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:16:36.027 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:16:44.968 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:16:50.253 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:16:54.384 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:16:58.859 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:17:03.963 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:17:09.039 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:17:48.051 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:17:55.553 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:17:59.539 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:18:07.878 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:18:12.954 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:18:17.239 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:18:20.891 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:18:26.006 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:18:31.063 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:19:59.358 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:20:06.930 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:20:12.718 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:20:22.898 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:20:28.521 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:20:32.368 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:20:36.500 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:20:41.640 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:20:46.669 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:22:27.886 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:22:37.044 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:22:41.581 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:22:50.219 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:22:55.317 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:22:59.985 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:23:03.229 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:23:08.530 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:23:13.607 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-21 20:24:35.474 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-21 20:24:52.864 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-21 20:24:58.405 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-21 20:25:08.178 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-21 20:25:13.726 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-21 20:25:18.580 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-21 20:25:21.870 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-21 20:25:39.403 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-21 20:25:39.588 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-21 20:25:39.922 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-21 20:25:39.981 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-21 20:25:45.067 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-22 08:52:38.747 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-22 08:52:54.322 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-22 08:53:01.085 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-22 08:53:12.384 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-22 08:53:18.092 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-22 08:53:22.370 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-22 08:53:27.939 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-22 08:53:46.821 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-22 08:53:47.000 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-22 08:53:47.377 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-22 08:53:47.431 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-22 08:53:52.499 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-22 08:55:58.296 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-22 08:56:28.535 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-22 08:56:33.431 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-22 08:56:41.375 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-22 08:56:46.625 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-22 08:56:50.820 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-22 08:56:54.200 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-22 08:57:09.249 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-22 08:57:09.420 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-22 08:57:10.101 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-22 08:57:10.200 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-22 08:57:15.279 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-22 08:59:20.183 [main] LandingPage - clicking the cab icon
+[INFO ] 2021-07-22 08:59:34.943 [main] CabBookingPage - Select the one way radio button
+[INFO ] 2021-07-22 08:59:39.095 [main] CabBookingPage - filling the source city
+[INFO ] 2021-07-22 08:59:46.829 [main] CabBookingPage - filling the destination city
+[INFO ] 2021-07-22 08:59:51.997 [main] CabBookingPage - filling the departure time
+[INFO ] 2021-07-22 08:59:56.021 [main] CabBookingPage - filling pickup time
+[INFO ] 2021-07-22 08:59:59.553 [main] CabBookingPage - click the search button
+[INFO ] 2021-07-22 09:00:13.359 [main] CabBookingPriceDetailsPage - verifying the Sorted Order of Cab Prices
+[INFO ] 2021-07-22 09:00:13.521 [main] CabBookingPriceDetailsPage - clicking the SUV text
+[INFO ] 2021-07-22 09:00:13.935 [main] CabBookingPriceDetailsPage - verifying the SUV text
+[INFO ] 2021-07-22 09:00:14.006 [main] CabBookingPriceDetailsPage - Finding the list of cabs
+[INFO ] 2021-07-22 09:00:19.054 [main] CabBookingPriceDetailsPage - Finding the prices of cabs
+[INFO ] 2021-07-22 09:00:49.942 [main] LandingPage - clicking the gift card
+[INFO ] 2021-07-22 09:01:04.871 [main] GiftCardsPage - card clicked
+[INFO ] 2021-07-22 09:01:59.654 [main] LandingPage - clicking the hotel icon
+[INFO ] 2021-07-22 09:02:06.012 [main] HotelBookingPage - filling the hotel city
+[INFO ] 2021-07-22 09:02:11.276 [main] HotelBookingPage - selecting the check in date
+[INFO ] 2021-07-22 09:02:11.503 [main] HotelBookingPage - selecting the check out date
+[INFO ] 2021-07-22 09:02:11.794 [main] HotelBookingPage - Capturing the guest count
+[INFO ] 2021-07-22 09:02:17.624 [main] LandingPage - clicking the hotel icon
+[INFO ] 2021-07-22 09:02:22.874 [main] HotelBookingPage - filling the hotel city
